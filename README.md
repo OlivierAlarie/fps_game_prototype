@@ -6,7 +6,7 @@ This prototype was an assignment for Salim's class of the Independent Video Game
 Members:
 Etienne Caya
 Benoit Girard
-Olivier Alarie
+Olivier Alarie 
 Ricardo Lorenzo
 
 PC Controls: 
