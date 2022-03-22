@@ -1,4 +1,4 @@
-#fps_game_prototype
+# fps_game_prototype
 
 Be the City PERF champion by shooting down all your foes and allies?! (WIP) 5+ minutes of gameplay.  
 This prototype was an assignment for Salim's class of the Independent Video Game Design AEC program at Dawson college.
