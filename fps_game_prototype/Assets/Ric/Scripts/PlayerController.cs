@@ -66,7 +66,12 @@ public class PlayerController : MonoBehaviour
         _inputActions.Player.Interact.started += OnInteract;
         _inputActions.Player.Interact.canceled += OnInteract;
     }
-
+    
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+    
     void OnMovement(InputAction.CallbackContext context)
     {
         _movementInput = context.ReadValue<Vector2>();
