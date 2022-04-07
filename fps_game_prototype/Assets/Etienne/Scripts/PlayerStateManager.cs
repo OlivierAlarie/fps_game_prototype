@@ -9,10 +9,12 @@ public class PlayerStateManager
     private PlayerBaseState _currentState;
     public PlayerIdleState IdleState = new PlayerIdleState();
     public PlayerWalkState WalkState = new PlayerWalkState();
+    public PlayerJumpState JumpState = new PlayerJumpState();
 
     public PlayerStateManager(Player player)
     {
         Player = player;
+        SwitchState(IdleState);
     }
 
     public void Update()

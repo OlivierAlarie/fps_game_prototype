@@ -7,48 +7,44 @@ public class Player : MonoBehaviour
 {
     public Animator Animator;
     public CharacterController CharacterController;
-    public PlayerCommandInvoker PlayerCommandInvoker;
-    public PlayerStateManager PlayerStateManager;
+    public PlayerCommandManager CommandManager;
+    public PlayerStateManager StateManager;
+    public PlayerWeaponManager WeaponManager;
+    //public PlayerEventManager EventManager; ? for Collisions and Game Events
 
     // MOVEMENT VARIABLES
-
-    public Vector3 _moveDirection;
-    [SerializeField]
-    float _moveSpeed = 3f;
+    public Vector3 Motion;
+    public float WalkSpeed = 3f;
 
     // JUMPING VARIABLES
-    bool _isJumpPressed = false;
-    [SerializeField]
-    float _jumpForce = 5f;
-    bool _isJumping = false;
+    public float JumpHeight = 5f;
 
     // GRAVITY VARIABLES
-
-    [SerializeField]
-    float _groundedGravity = -.05f;
-    [SerializeField]
-    float _gravity = -9.8f;
+    public float GroundedGravity = -2f;
+    public float Gravity = -9.8f;
 
     // CAMERA VARIABLES
+    [SerializeField]
+    private Vector2 _cameraSensitivity = new Vector2(360f, 360f);
+    [SerializeField]
+    private Vector2 _cameraYBounds = new Vector2(-45f, 45f);
+    [SerializeField]
+    private Transform _playerCamera;
 
-    public Vector2 _cameraMoveInput;
-    [SerializeField]
-    Vector2 _cameraSensitivity = new Vector2(360f, 360f);
-    [SerializeField]
-    Vector2 _cameraYBounds = new Vector2(-45f, 45f);
-    [SerializeField]
-    Transform _playerCamera;
-
-    float TargetRotationH = 0f;
-    float TargetRotationV = 0f;
+    private float TargetRotationH = 0f;
+    private float TargetRotationV = 0f;
 
 
     private void Awake()
     {
         Animator = GetComponent<Animator>();
         CharacterController = GetComponent<CharacterController>();
-        PlayerCommandInvoker = new PlayerCommandInvoker(this);
-        PlayerStateManager = new PlayerStateManager(this);
+        CommandManager = new PlayerCommandManager();
+        WeaponManager = new PlayerWeaponManager();
+        StateManager = new PlayerStateManager(this);
+
+        WeaponManager.AddWeapon(GetComponentInChildren<PlayerWeapon>(true));
+        WeaponManager.SwitchWeapon(2);
     }
 
     private void Start()
@@ -56,51 +52,17 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    private void OnEnable()
-    {
-        PlayerCommandInvoker.Inputs.Enable();
-    }
-    private void OnDisable()
-    {
-        PlayerCommandInvoker.Inputs.Disable();
-    }
-
-    void HandleGravity()
-    {
-        if (CharacterController.isGrounded)
-        {
-            _moveDirection.y = _groundedGravity;
-        }
-        else
-        {
-            _moveDirection.y += _gravity * Time.deltaTime;
-        }
-    }
-
-    void HandleJump()
-    {
-        if (!_isJumping && CharacterController.isGrounded && _isJumpPressed)
-        {
-            _isJumping = true;
-            _moveDirection.y += _jumpForce;
-        }
-        else if (!_isJumpPressed && _isJumping && CharacterController.isGrounded)
-        {
-            _isJumping = false;
-        }
-    }
-
     void Update()
     {
-        CharacterController.Move(transform.TransformDirection(_moveDirection) * _moveSpeed * Time.deltaTime);
-        HandleGravity();
-        HandleJump();
+        StateManager.Update();
+        CharacterController.Move(transform.TransformDirection(Motion) * Time.deltaTime);
     }
 
     void LateUpdate()
     {
-        TargetRotationH += _cameraMoveInput.x * Time.deltaTime * _cameraSensitivity.x;
-        TargetRotationV += _cameraMoveInput.y * Time.deltaTime * _cameraSensitivity.y;
+
+        TargetRotationH += CommandManager.Look.x * Time.deltaTime * _cameraSensitivity.x;
+        TargetRotationV += CommandManager.Look.y * Time.deltaTime * _cameraSensitivity.y;
 
         TargetRotationV = Mathf.Clamp(TargetRotationV, _cameraYBounds.x, _cameraYBounds.y);
 
