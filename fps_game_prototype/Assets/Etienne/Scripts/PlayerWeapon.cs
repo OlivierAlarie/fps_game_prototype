@@ -18,6 +18,10 @@ public class PlayerWeapon : MonoBehaviour
     public Camera mainCamera;
     public float scopedFOV = 15f;
     private float defaultFOV;
+    public bool isARayCaster;
+    public Transform gunBarrel;
+    Vector3 rayTargetPoint;
+    public float bulletForce;
 
     [SerializeField] private Animator _animator;
 
@@ -37,13 +41,21 @@ public class PlayerWeapon : MonoBehaviour
         }
         //InstantiateProjectile
         RaycastHit hit;
-        if(Physics.Raycast(transform.parent.position, transform.forward, out hit, Range))
+        if(Physics.Raycast(transform.parent.position, transform.forward, out hit, Range) && isARayCaster)
         {
             GameObject go = Instantiate(projectile, hit.point,Quaternion.identity);
             go.GetComponent<Rigidbody>().AddExplosionForce(250f, hit.point, 10f);
             Destroy(go, 2.5f);
         }
-
+        if(Physics.Raycast(transform.parent.position, transform.forward, out hit, Range) && !isARayCaster)
+        {
+            rayTargetPoint = hit.point;
+            Vector3 directionOfBullet = rayTargetPoint - gunBarrel.position;
+            GameObject bulletFromBarrel = Instantiate(projectile,gunBarrel.position,Quaternion.identity);
+            bulletFromBarrel.transform.forward = directionOfBullet.normalized;
+            bulletFromBarrel.GetComponent<Rigidbody>().AddForce(directionOfBullet.normalized * bulletForce,ForceMode.Impulse);
+            Destroy(bulletFromBarrel,2.5f);
+        }
     }
     public void AddAmmo(int Ammo)
     {
