@@ -37,7 +37,7 @@ public class PlayerWeapon : MonoBehaviour
             GameObject go = Instantiate(projectile, hit.point,Quaternion.identity);
             go.GetComponent<Rigidbody>().AddExplosionForce(250f, hit.point, 10f);
             particles.Play();
-            Destroy(go, 1f);
+            Destroy(go, 2.5f);
         }
 
     }
