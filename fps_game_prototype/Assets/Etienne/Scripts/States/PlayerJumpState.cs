@@ -26,6 +26,11 @@ public class PlayerJumpState : PlayerBaseState
         {
             manager.SwitchState(manager.IdleState);
         }
+        if (manager.Player.CommandManager.AimPressed)
+        {
+            manager.Player.WeaponManager.PlayAimAnimation();
+            manager.Player.CommandManager.AimPressed = false;
+        }
     }
 
 }

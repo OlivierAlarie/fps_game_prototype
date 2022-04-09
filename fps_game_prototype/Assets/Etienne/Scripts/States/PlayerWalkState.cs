@@ -27,6 +27,11 @@ public class PlayerWalkState : PlayerBaseState
             manager.Player.WeaponManager.FireWeapon();
             manager.Player.CommandManager.FirePressed = false;
         }
+        if (manager.Player.CommandManager.AimPressed)
+        {
+            manager.Player.WeaponManager.PlayAimAnimation();
+            manager.Player.CommandManager.AimPressed = false;
+        }
     }
 
 }
