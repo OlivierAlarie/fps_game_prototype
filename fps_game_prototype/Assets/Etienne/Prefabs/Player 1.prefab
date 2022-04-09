@@ -5137,8 +5137,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 22408764}
-  - {fileID: 6627434369977127769}
   - {fileID: 6627434369913281481}
+  - {fileID: 6627434369977127769}
   m_Father: {fileID: 7767427084997444266}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5228,7 +5228,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 54c1a845f62f3d641be912325853542c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 54c1a845f62f3d641be912325853542c, type: 3}
       propertyPath: m_LocalScale.x
@@ -5244,7 +5244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 54c1a845f62f3d641be912325853542c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.34
+      value: 0.34000015
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 54c1a845f62f3d641be912325853542c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5260,7 +5260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 54c1a845f62f3d641be912325853542c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 54c1a845f62f3d641be912325853542c, type: 3}
       propertyPath: m_LocalRotation.y
@@ -5381,9 +5381,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f94f17ed0bcf222498104674ec515d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxAmmo: 250
-  AmmoCount: 250
-  WeaponType: 2
+  MaxAmmo: 24
+  AmmoCount: 0
+  WeaponType: 3
   Range: 50
   projectile: {fileID: 6661906932893866682}
   particles: {fileID: 455496904}
@@ -5411,7 +5411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0845783030ed0e4fa8b0aaf3fca3a99, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0845783030ed0e4fa8b0aaf3fca3a99, type: 3}
       propertyPath: m_LocalScale.x
@@ -5443,15 +5443,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0845783030ed0e4fa8b0aaf3fca3a99, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0845783030ed0e4fa8b0aaf3fca3a99, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0845783030ed0e4fa8b0aaf3fca3a99, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0845783030ed0e4fa8b0aaf3fca3a99, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5616,16 +5616,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f94f17ed0bcf222498104674ec515d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxAmmo: 250
-  AmmoCount: 250
-  WeaponType: 2
+  MaxAmmo: 64
+  AmmoCount: 0
+  WeaponType: 1
   Range: 10
   projectile: {fileID: 6661906932893866682}
   particles: {fileID: 455496904}
   crossHairUI: {fileID: 0}
   scopeUI: {fileID: 0}
-  weaponCamera: {fileID: 0}
-  mainCamera: {fileID: 0}
+  weaponCamera: {fileID: 22408763}
+  mainCamera: {fileID: 7767427085630949520}
   scopedFOV: 15
   _animator: {fileID: 2058548884}
 --- !u!4 &6627434369913281481 stripped

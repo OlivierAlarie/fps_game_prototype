@@ -43,8 +43,11 @@ public class Player : MonoBehaviour
         WeaponManager = new PlayerWeaponManager();
         StateManager = new PlayerStateManager(this);
 
-        WeaponManager.AddWeapon(GetComponentInChildren<PlayerWeapon>(true));
-        WeaponManager.SwitchWeapon(2);
+        PlayerWeapon[] weapons = GetComponentsInChildren<PlayerWeapon>(true);
+        foreach (var weapon in weapons)
+        {
+            WeaponManager.AddWeapon(weapon);
+        }
     }
 
     private void Start()
@@ -52,13 +55,13 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void Update()
+    private void Update()
     {
         StateManager.Update();
         CharacterController.Move(transform.TransformDirection(Motion) * Time.deltaTime);
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
 
         TargetRotationH += CommandManager.Look.x * Time.deltaTime * _cameraSensitivity.x;
@@ -68,5 +71,14 @@ public class Player : MonoBehaviour
 
         transform.localRotation = Quaternion.AngleAxis(TargetRotationH, gameObject.transform.up);
         _playerCamera.transform.localRotation = Quaternion.AngleAxis(-TargetRotationV, Vector3.right);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("WeaponPickup"))
+        {
+            WeaponManager.AddWeapon(other.GetComponent<PlayerWeapon>());
+            Debug.Log("PickedUp");
+        }
     }
 }

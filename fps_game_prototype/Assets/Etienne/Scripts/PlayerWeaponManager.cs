@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerWeaponManager
 {
 
-    private PlayerWeapon[] _weapons = new PlayerWeapon[3];
+    private PlayerWeapon[] _weapons = new PlayerWeapon[4];
     public PlayerWeapon CurrentWeapon;
 
 
@@ -21,11 +21,14 @@ public class PlayerWeaponManager
 
     public void SwitchWeapon(int weaponselect)
     {
-        if(_weapons[weaponselect] != null)
+        if(_weapons[weaponselect] != null && !_weapons[weaponselect].isActiveAndEnabled)
         {
-            //CurrentWeapon.Deselect()
+            if(CurrentWeapon != null)
+            {
+                CurrentWeapon.Holster();
+            }
             CurrentWeapon = _weapons[weaponselect];
-            //CurrentWeapon.Select()
+            CurrentWeapon.Draw();
         }
     }
 
@@ -33,7 +36,19 @@ public class PlayerWeaponManager
     {
         if(_weapons[weapon.WeaponType] == null)
         {
+            Debug.Log("Adding");
             _weapons[weapon.WeaponType] = weapon;
+        }
+        else if (!_weapons[weapon.WeaponType].isActiveAndEnabled)
+        {
+            Debug.Log("enabling");
+            _weapons[weapon.WeaponType].gameObject.SetActive(true);
+            _weapons[weapon.WeaponType].AddAmmo(weapon.AmmoCount);
+            if (CurrentWeapon == null)
+            {
+                CurrentWeapon = _weapons[weapon.WeaponType];
+                CurrentWeapon.Draw();
+            }
         }
         else
         {

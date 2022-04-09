@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Crate
+  - WeaponPickup
   layers:
   - Default
   - TransparentFX

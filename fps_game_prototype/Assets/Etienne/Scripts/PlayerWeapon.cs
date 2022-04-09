@@ -22,7 +22,6 @@ public class PlayerWeapon : MonoBehaviour
 
     public void Fire()
     {
-        Debug.Log("Trying to Fire !");
         if (AmmoCount == 0)
         {
             return;
@@ -56,18 +55,22 @@ public class PlayerWeapon : MonoBehaviour
 
     }
 
-    public void Select()
+    public void Draw()
     {
-
+        _animator.SetInteger("WeaponState", 1);
     }
 
-    public void Deselect()
+    public void Holster()
     {
-
+        _animator.SetInteger("WeaponState", 0);
     }
 
     public void Aim()
     {
+        if(scopeUI == null)
+        {
+            return;
+        }
         isScoped = !isScoped;
         _animator.SetBool("isScoped", isScoped);
         SwitchCrossHair();
