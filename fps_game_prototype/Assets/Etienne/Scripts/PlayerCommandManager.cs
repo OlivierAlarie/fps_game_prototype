@@ -13,6 +13,7 @@ public class PlayerCommandManager
     public bool JumpPressed = false;
     public bool FirePressed = false;
     public int WeaponSelection = -1;
+    public bool AimPressed = false;
 
 
     // Start is called before the first frame update
@@ -33,6 +34,8 @@ public class PlayerCommandManager
         _inputs.Player.Jump.canceled += OnJump;
         _inputs.Player.Interact.started += OnInteract;
         _inputs.Player.Interact.canceled += OnInteract;
+        _inputs.Player.Aim.performed += OnAim;
+        _inputs.Player.Aim.canceled += OnAim;
 
         //WeaponSelect
         _inputs.Player.Weapon1.started += OnWeaponSelect;
@@ -82,5 +85,10 @@ public class PlayerCommandManager
         {
             WeaponSelection = 3;
         }
+    }
+
+    private void OnAim(InputAction.CallbackContext context)
+    {
+        AimPressed = context.control.IsPressed();
     }
 }

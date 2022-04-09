@@ -98,6 +98,15 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Aim"",
+                    ""type"": ""Button"",
+                    ""id"": ""1f23c7b9-a5fa-4c9c-8252-01ea4e42f0cb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -428,6 +437,28 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Weapon3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""efde21e5-5fac-4f24-9c7e-ecd7380cc9c8"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""50c2526c-b4db-4e64-bffe-fe28e3044171"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1023,6 +1054,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         m_Player_Weapon1 = m_Player.FindAction("Weapon1", throwIfNotFound: true);
         m_Player_Weapon2 = m_Player.FindAction("Weapon2", throwIfNotFound: true);
         m_Player_Weapon3 = m_Player.FindAction("Weapon3", throwIfNotFound: true);
+        m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1102,6 +1134,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Weapon1;
     private readonly InputAction m_Player_Weapon2;
     private readonly InputAction m_Player_Weapon3;
+    private readonly InputAction m_Player_Aim;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
@@ -1114,6 +1147,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         public InputAction @Weapon1 => m_Wrapper.m_Player_Weapon1;
         public InputAction @Weapon2 => m_Wrapper.m_Player_Weapon2;
         public InputAction @Weapon3 => m_Wrapper.m_Player_Weapon3;
+        public InputAction @Aim => m_Wrapper.m_Player_Aim;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1147,6 +1181,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Weapon3.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeapon3;
                 @Weapon3.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeapon3;
                 @Weapon3.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeapon3;
+                @Aim.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
+                @Aim.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
+                @Aim.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1175,6 +1212,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Weapon3.started += instance.OnWeapon3;
                 @Weapon3.performed += instance.OnWeapon3;
                 @Weapon3.canceled += instance.OnWeapon3;
+                @Aim.started += instance.OnAim;
+                @Aim.performed += instance.OnAim;
+                @Aim.canceled += instance.OnAim;
             }
         }
     }
@@ -1339,6 +1379,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         void OnWeapon1(InputAction.CallbackContext context);
         void OnWeapon2(InputAction.CallbackContext context);
         void OnWeapon3(InputAction.CallbackContext context);
+        void OnAim(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

@@ -40,4 +40,14 @@ public class PlayerWeaponManager
             _weapons[weapon.WeaponType].AddAmmo(weapon.AmmoCount);
         }
     }
+
+    public void PlayAimAnimation()
+    {
+        if (CurrentWeapon == null)
+        {
+            return;
+        }
+
+        CurrentWeapon.Aim();
+    }
 }
