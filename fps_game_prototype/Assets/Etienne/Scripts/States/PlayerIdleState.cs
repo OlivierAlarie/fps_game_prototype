@@ -32,6 +32,12 @@ public class PlayerIdleState : PlayerBaseState
             manager.Player.WeaponManager.PlayAimAnimation();
             manager.Player.CommandManager.AimPressed = false;
         }
+
+        if (manager.Player.CommandManager.WeaponSelectionPressed)
+        {
+            manager.Player.CommandManager.WeaponSelectionPressed = false;
+            manager.Player.WeaponManager.SwitchWeapon(manager.Player.CommandManager.WeaponSelection);
+        }
     }
 
 }

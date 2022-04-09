@@ -21,7 +21,7 @@ public class PlayerWeaponManager
 
     public void SwitchWeapon(int weaponselect)
     {
-        if(_weapons[weaponselect] != null && !_weapons[weaponselect].isActiveAndEnabled)
+        if(_weapons[weaponselect] != null && _weapons[weaponselect].isActiveAndEnabled)
         {
             if(CurrentWeapon != null)
             {
@@ -36,7 +36,6 @@ public class PlayerWeaponManager
     {
         if(_weapons[weapon.WeaponType] == null)
         {
-            Debug.Log("Adding");
             _weapons[weapon.WeaponType] = weapon;
         }
         else if (!_weapons[weapon.WeaponType].isActiveAndEnabled)

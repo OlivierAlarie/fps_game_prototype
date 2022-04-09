@@ -5386,7 +5386,7 @@ MonoBehaviour:
   WeaponType: 3
   Range: 50
   projectile: {fileID: 6661906932893866682}
-  particles: {fileID: 455496904}
+  particles: {fileID: 0}
   crossHairUI: {fileID: 0}
   scopeUI: {fileID: 0}
   weaponCamera: {fileID: 22408763}

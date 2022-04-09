@@ -26,10 +26,17 @@ public class PlayerJumpState : PlayerBaseState
         {
             manager.SwitchState(manager.IdleState);
         }
+
         if (manager.Player.CommandManager.AimPressed)
         {
             manager.Player.WeaponManager.PlayAimAnimation();
             manager.Player.CommandManager.AimPressed = false;
+        }
+
+        if (manager.Player.CommandManager.WeaponSelectionPressed)
+        {
+            manager.Player.CommandManager.WeaponSelectionPressed = false;
+            manager.Player.WeaponManager.SwitchWeapon(manager.Player.CommandManager.WeaponSelection);
         }
     }
 

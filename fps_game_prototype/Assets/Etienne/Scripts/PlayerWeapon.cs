@@ -11,6 +11,7 @@ public class PlayerWeapon : MonoBehaviour
     public GameObject projectile;
     public ParticleSystem particles;
     private bool isScoped = false;
+    private bool isReady = false;
     public GameObject crossHairUI;
     public GameObject scopeUI;
     public GameObject weaponCamera;
@@ -29,13 +30,16 @@ public class PlayerWeapon : MonoBehaviour
 
         AmmoCount--;
         //Fire Animation
+        if (particles != null)
+        {
+            particles.Play();
+        }
         //InstantiateProjectile
         RaycastHit hit;
         if(Physics.Raycast(transform.parent.position, transform.forward, out hit, Range))
         {
             GameObject go = Instantiate(projectile, hit.point,Quaternion.identity);
             go.GetComponent<Rigidbody>().AddExplosionForce(250f, hit.point, 10f);
-            particles.Play();
             Destroy(go, 2.5f);
         }
 
@@ -58,11 +62,13 @@ public class PlayerWeapon : MonoBehaviour
     public void Draw()
     {
         _animator.SetInteger("WeaponState", 1);
+        isReady = true;
     }
 
     public void Holster()
     {
         _animator.SetInteger("WeaponState", 0);
+        isReady = false;
     }
 
     public void Aim()

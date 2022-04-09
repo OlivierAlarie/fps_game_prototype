@@ -78,7 +78,6 @@ public class Player : MonoBehaviour
         if (other.CompareTag("WeaponPickup"))
         {
             WeaponManager.AddWeapon(other.GetComponent<PlayerWeapon>());
-            Debug.Log("PickedUp");
         }
     }
 }

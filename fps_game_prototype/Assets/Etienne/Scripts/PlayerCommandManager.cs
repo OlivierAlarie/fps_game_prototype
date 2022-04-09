@@ -12,6 +12,7 @@ public class PlayerCommandManager
 
     public bool JumpPressed = false;
     public bool FirePressed = false;
+    public bool WeaponSelectionPressed = false;
     public int WeaponSelection = -1;
     public bool AimPressed = false;
 
@@ -73,6 +74,7 @@ public class PlayerCommandManager
 
     private void OnWeaponSelect(InputAction.CallbackContext context)
     {
+        WeaponSelectionPressed = context.ReadValueAsButton();
         if(context.action.name == "Weapon1")
         {
             WeaponSelection = 1;
