@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class PlayerWeapon : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class PlayerWeapon : MonoBehaviour
     public int WeaponType;
     public float Range;
     public GameObject projectile;
-    public ParticleSystem particles;
+    public VisualEffect particles;
     public bool isScoped = false;
     private bool isReady = false;
     public GameObject crossHairUI;
