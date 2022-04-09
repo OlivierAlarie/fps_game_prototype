@@ -23,7 +23,9 @@ public class PlayerWeaponManager
     {
         if(_weapons[weaponselect] != null)
         {
+            //CurrentWeapon.Deselect()
             CurrentWeapon = _weapons[weaponselect];
+            //CurrentWeapon.Select()
         }
     }
 
@@ -32,7 +34,6 @@ public class PlayerWeaponManager
         if(_weapons[weapon.WeaponType] == null)
         {
             _weapons[weapon.WeaponType] = weapon;
-            //Switch Weapon animation ?
         }
         else
         {

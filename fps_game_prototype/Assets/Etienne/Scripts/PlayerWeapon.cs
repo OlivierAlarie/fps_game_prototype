@@ -48,4 +48,14 @@ public class PlayerWeapon : MonoBehaviour
     {
         
     }
+
+    public void Select()
+    {
+        
+    }
+
+    public void Deselect()
+    {
+
+    }
 }
