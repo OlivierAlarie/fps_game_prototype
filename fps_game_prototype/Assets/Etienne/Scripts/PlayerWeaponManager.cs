@@ -21,15 +21,18 @@ public class PlayerWeaponManager
 
     public void SwitchWeapon(int weaponselect)
     {
-        if(_weapons[weaponselect] != null && _weapons[weaponselect].isActiveAndEnabled)
+        //If weapon doesn't exist, hasn't been picked up yet or is in scope view
+        if (_weapons[weaponselect] == null || !_weapons[weaponselect].isActiveAndEnabled || CurrentWeapon.isScoped)
         {
-            if(CurrentWeapon != null)
-            {
-                CurrentWeapon.Holster();
-            }
-            CurrentWeapon = _weapons[weaponselect];
-            CurrentWeapon.Draw();
+            return;
         }
+
+        if(CurrentWeapon != null)
+        {
+            CurrentWeapon.Holster();
+        }
+        CurrentWeapon = _weapons[weaponselect];
+        CurrentWeapon.Draw();
     }
 
     public void AddWeapon(PlayerWeapon weapon)

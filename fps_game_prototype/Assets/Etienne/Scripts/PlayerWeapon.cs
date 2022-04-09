@@ -10,7 +10,7 @@ public class PlayerWeapon : MonoBehaviour
     public float Range;
     public GameObject projectile;
     public ParticleSystem particles;
-    private bool isScoped = false;
+    public bool isScoped = false;
     private bool isReady = false;
     public GameObject crossHairUI;
     public GameObject scopeUI;
@@ -23,10 +23,11 @@ public class PlayerWeapon : MonoBehaviour
 
     public void Fire()
     {
-        if (AmmoCount == 0)
+        if (AmmoCount == 0 || !isReady)
         {
             return;
         }
+
 
         AmmoCount--;
         //Fire Animation
@@ -62,7 +63,7 @@ public class PlayerWeapon : MonoBehaviour
     public void Draw()
     {
         _animator.SetInteger("WeaponState", 1);
-        isReady = true;
+        StartCoroutine(DelayReady());
     }
 
     public void Holster()
@@ -104,5 +105,14 @@ public class PlayerWeapon : MonoBehaviour
         weaponCamera.SetActive(false);
         defaultFOV = mainCamera.fieldOfView; // get default FOV
         mainCamera.fieldOfView = scopedFOV; // apply new FOV (Zoom)
+    }
+
+    IEnumerator DelayReady()
+    {
+        while (_animator.GetCurrentAnimatorStateInfo(0).IsName("Holstered"))
+        {
+            yield return null;
+        }
+        isReady = true;
     }
 }
