@@ -64,6 +64,8 @@ public class PlayerWeapon : MonoBehaviour
     public void Deselect()
     {
 
+    }
+
     public void Aim()
     {
         isScoped = !isScoped;
