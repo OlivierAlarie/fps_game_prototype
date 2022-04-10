@@ -10,6 +10,7 @@ public class PlayerStateManager
     public PlayerIdleState IdleState = new PlayerIdleState();
     public PlayerWalkState WalkState = new PlayerWalkState();
     public PlayerJumpState JumpState = new PlayerJumpState();
+    public PlayerFallState FallState = new PlayerFallState();
 
     public PlayerStateManager(Player player)
     {

@@ -9,6 +9,7 @@ public class PlayerWeapon : MonoBehaviour
     public int AmmoCount;
     public int WeaponType;
     public float Range;
+    public float FireRate;
     public GameObject projectile;
     public VisualEffect particles;
     public bool isScoped = false;
@@ -40,26 +41,30 @@ public class PlayerWeapon : MonoBehaviour
         {
             particles.Play();
         }
-        //InstantiateProjectile
+
+        
         RaycastHit hit;
-        if(Physics.Raycast(transform.parent.position, transform.forward, out hit, Range) && isARayCaster)
-        {
-            GameObject go = Instantiate(projectile, hit.point,Quaternion.identity);
-            go.GetComponent<Rigidbody>().AddExplosionForce(250f, hit.point, 10f);
-            Destroy(go, 2.5f);
-        }
-        if(Physics.Raycast(transform.parent.position, transform.forward, out hit, Range) && !isARayCaster)
+        Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        if (Physics.Raycast(ray, out hit, Range))
         {
             rayTargetPoint = hit.point;
-             BulletSpawner();
         }
         else
         {
-            Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
-            rayTargetPoint = ray.GetPoint(100f);
+            rayTargetPoint = ray.GetPoint(Range);
+        }
+
+        //InstantiateProjectile
+        if (isARayCaster)
+        {
+            GameObject go = Instantiate(projectile, rayTargetPoint, Quaternion.identity);
+            go.GetComponent<Rigidbody>().AddExplosionForce(250f, rayTargetPoint, 10f);
+            Destroy(go, 2.5f);
+        }
+        else
+        {
             BulletSpawner();
         }
-        
     }
     public void AddAmmo(int Ammo)
     {

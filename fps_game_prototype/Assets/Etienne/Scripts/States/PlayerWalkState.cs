@@ -22,6 +22,11 @@ public class PlayerWalkState : PlayerBaseState
             manager.SwitchState(manager.JumpState);
         }
 
+        if (manager.Player.CharacterController.isGrounded)
+        {
+            manager.SwitchState(manager.FallState);
+        }
+
         if (manager.Player.CommandManager.FirePressed)
         {
             manager.Player.WeaponManager.FireWeapon();

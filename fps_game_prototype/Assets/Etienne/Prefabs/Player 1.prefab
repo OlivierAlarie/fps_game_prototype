@@ -140,6 +140,37 @@ Transform:
   m_Father: {fileID: 6627434369913281481}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4877560012401792840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7267272585730785935}
+  m_Layer: 6
+  m_Name: BarrelTip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7267272585730785935
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4877560012401792840}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.002, y: 0.775, z: 4.51}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6627434369977127769}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6483179525458858049
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,7 +680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54c1a845f62f3d641be912325853542c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 961085727521559401, guid: 54c1a845f62f3d641be912325853542c, type: 3}
       propertyPath: m_Layer
@@ -718,7 +749,7 @@ MonoBehaviour:
   AmmoCount: 0
   WeaponType: 3
   Range: 50
-  projectile: {fileID: 0}
+  projectile: {fileID: 7422450222277795463, guid: 38f46e040bd14ed4b8eda1c7b4c42b54, type: 3}
   particles: {fileID: 0}
   isScoped: 0
   crossHairUI: {fileID: 0}
@@ -727,7 +758,7 @@ MonoBehaviour:
   mainCamera: {fileID: 7767427085630949520}
   scopedFOV: 15
   isARayCaster: 0
-  gunBarrel: {fileID: 0}
+  gunBarrel: {fileID: 7267272585730785935}
   bulletForce: 0
   _animator: {fileID: 944682436}
 --- !u!4 &6627434369977127769 stripped
@@ -957,7 +988,7 @@ MonoBehaviour:
   AmmoCount: 0
   WeaponType: 1
   Range: 10
-  projectile: {fileID: 4106782342649155333, guid: f1359b158a3b33147aa02399a80637b9, type: 3}
+  projectile: {fileID: 7422450222277795463, guid: 38f46e040bd14ed4b8eda1c7b4c42b54, type: 3}
   particles: {fileID: 6741740860798953471}
   isScoped: 0
   crossHairUI: {fileID: 0}
