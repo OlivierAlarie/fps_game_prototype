@@ -38,6 +38,12 @@ public class PlayerWalkState : PlayerBaseState
             manager.Player.CommandManager.WeaponSelectionPressed = false;
             manager.Player.WeaponManager.SwitchWeapon(manager.Player.CommandManager.WeaponSelection);
         }
+
+        if (manager.Player.CommandManager.MeleePressed)
+        {
+            manager.Player.CommandManager.MeleePressed = false;
+            manager.Player.WeaponManager.FireMeleeWeapon();
+        }
     }
 
 }

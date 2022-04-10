@@ -12,6 +12,7 @@ public class PlayerCommandManager
 
     public bool JumpPressed = false;
     public bool FirePressed = false;
+    public bool MeleePressed = false;
     public bool WeaponSelectionPressed = false;
     public int WeaponSelection = -1;
     public bool AimPressed = false;
@@ -38,10 +39,17 @@ public class PlayerCommandManager
         _inputs.Player.Aim.performed += OnAim;
         _inputs.Player.Aim.canceled += OnAim;
 
+
         //WeaponSelect
         _inputs.Player.Weapon1.started += OnWeaponSelect;
+        _inputs.Player.Weapon1.canceled += OnWeaponSelect;
         _inputs.Player.Weapon2.started += OnWeaponSelect;
+        _inputs.Player.Weapon2.canceled += OnWeaponSelect;
         _inputs.Player.Weapon3.started += OnWeaponSelect;
+        _inputs.Player.Weapon3.canceled += OnWeaponSelect;
+
+        _inputs.Player.Melee.performed += OnMelee;
+        _inputs.Player.Melee.canceled += OnMelee;
 
         _inputs.Enable();
     }
@@ -60,6 +68,11 @@ public class PlayerCommandManager
     private void OnFire(InputAction.CallbackContext context)
     {
         FirePressed = context.control.IsPressed();
+    }
+
+    private void OnMelee(InputAction.CallbackContext context)
+    {
+        MeleePressed = context.ReadValueAsButton();
     }
 
     private void OnJump(InputAction.CallbackContext context)

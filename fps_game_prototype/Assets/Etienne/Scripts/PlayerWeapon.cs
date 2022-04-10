@@ -24,7 +24,7 @@ public class PlayerWeapon : MonoBehaviour
     Vector3 rayTargetPoint;
     public float bulletForce;
 
-    [SerializeField] private Animator _animator;
+    [SerializeField] protected Animator _animator;
 
     public void Fire()
     {

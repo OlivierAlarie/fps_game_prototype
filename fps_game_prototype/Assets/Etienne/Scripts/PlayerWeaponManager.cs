@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerWeaponManager
 {
-
-    private PlayerWeapon[] _weapons = new PlayerWeapon[4];
+    //0 - Melee, 1 - Pistol, 2 - Automatic Rile, 3 - Sniper, 4 - Grenade ?
+    private PlayerWeapon[] _weapons = new PlayerWeapon[5];
     public PlayerWeapon CurrentWeapon;
 
 
@@ -17,6 +17,16 @@ public class PlayerWeaponManager
         }
 
         CurrentWeapon.Fire();
+    }
+
+    public void FireMeleeWeapon()
+    {
+        if(_weapons[0] == null || (CurrentWeapon != null && CurrentWeapon.isScoped))
+        {
+            return;
+        }
+
+        ((MeleeWeapon)_weapons[0]).Fire();
     }
 
     public void SwitchWeapon(int weaponselect)
@@ -43,7 +53,6 @@ public class PlayerWeaponManager
         }
         else if (!_weapons[weapon.WeaponType].isActiveAndEnabled)
         {
-            Debug.Log("enabling");
             _weapons[weapon.WeaponType].gameObject.SetActive(true);
             _weapons[weapon.WeaponType].AddAmmo(weapon.AmmoCount);
             if (CurrentWeapon == null)
