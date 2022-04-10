@@ -5578,7 +5578,7 @@ MonoBehaviour:
   WeaponType: 2
   Range: 10
   projectile: {fileID: 4955406054647184642}
-  particles: {fileID: 7782146832120609120}
+  particles: {fileID: 0}
   isScoped: 0
   crossHairUI: {fileID: 8872732538370899017}
   scopeUI: {fileID: 0}
@@ -5761,7 +5761,7 @@ MonoBehaviour:
   WeaponType: 2
   Range: 50
   projectile: {fileID: 6247422884262490068}
-  particles: {fileID: 7782146832120609120}
+  particles: {fileID: 0}
   isScoped: 0
   crossHairUI: {fileID: 8872732538370899017}
   scopeUI: {fileID: 8872732537768414394}

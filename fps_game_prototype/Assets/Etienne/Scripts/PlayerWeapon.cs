@@ -51,12 +51,15 @@ public class PlayerWeapon : MonoBehaviour
         if(Physics.Raycast(transform.parent.position, transform.forward, out hit, Range) && !isARayCaster)
         {
             rayTargetPoint = hit.point;
-            Vector3 directionOfBullet = rayTargetPoint - gunBarrel.position;
-            GameObject bulletFromBarrel = Instantiate(projectile,gunBarrel.position,Quaternion.identity);
-            bulletFromBarrel.transform.forward = directionOfBullet.normalized;
-            bulletFromBarrel.GetComponent<Rigidbody>().AddForce(directionOfBullet.normalized * bulletForce,ForceMode.Impulse);
-            Destroy(bulletFromBarrel,2.5f);
+             BulletSpawner();
         }
+        else
+        {
+            Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
+            rayTargetPoint = ray.GetPoint(100f);
+            BulletSpawner();
+        }
+        
     }
     public void AddAmmo(int Ammo)
     {
@@ -127,5 +130,13 @@ public class PlayerWeapon : MonoBehaviour
             yield return null;
         }
         isReady = true;
+    }
+    private void BulletSpawner()
+    {
+        Vector3 directionOfBullet = rayTargetPoint - gunBarrel.position;
+        GameObject bulletFromBarrel = Instantiate(projectile,gunBarrel.position,Quaternion.identity);
+        bulletFromBarrel.transform.forward = directionOfBullet.normalized;
+        bulletFromBarrel.GetComponent<Rigidbody>().AddForce(directionOfBullet.normalized * bulletForce,ForceMode.Impulse);
+        Destroy(bulletFromBarrel,2.5f);
     }
 }
