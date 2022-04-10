@@ -9,11 +9,12 @@ public class PlayerWeapon : MonoBehaviour
     public int AmmoCount;
     public int WeaponType;
     public float Range;
-    public float FireRate;
+    public float FireRate;//Number of seconds between shots
     public GameObject projectile;
     public VisualEffect particles;
     public bool isScoped = false;
     private bool isReady = false;
+    private bool canFire = true;
     public GameObject crossHairUI;
     public GameObject scopeUI;
     public GameObject weaponCamera;
@@ -29,7 +30,7 @@ public class PlayerWeapon : MonoBehaviour
 
     public void Fire()
     {
-        if (AmmoCount == 0 || !isReady)
+        if (AmmoCount == 0 || !isReady || !canFire)
         {
             return;
         }
@@ -65,6 +66,8 @@ public class PlayerWeapon : MonoBehaviour
         {
             BulletSpawner();
         }
+
+        StartCoroutine(DelayBetWeenShots());
     }
     public void AddAmmo(int Ammo)
     {
@@ -135,6 +138,13 @@ public class PlayerWeapon : MonoBehaviour
             yield return null;
         }
         isReady = true;
+    }
+
+    IEnumerator DelayBetWeenShots()
+    {
+        canFire = false;
+        yield return new WaitForSeconds(FireRate);
+        canFire = true;
     }
     private void BulletSpawner()
     {
