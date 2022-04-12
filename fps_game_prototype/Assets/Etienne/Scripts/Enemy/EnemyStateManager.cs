@@ -19,6 +19,7 @@ public class EnemyStateManager
 
     public void Update()
     {
+        Debug.Log(_currentState);
         _currentState.UpdateState(this);
     }
 
