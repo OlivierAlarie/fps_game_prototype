@@ -47,6 +47,8 @@ public class PlayerCommandManager
         _inputs.Player.Weapon2.canceled += OnWeaponSelect;
         _inputs.Player.Weapon3.started += OnWeaponSelect;
         _inputs.Player.Weapon3.canceled += OnWeaponSelect;
+        _inputs.Player.Weapon4.started += OnWeaponSelect;
+        _inputs.Player.Weapon4.canceled += OnWeaponSelect;
 
         _inputs.Player.Melee.performed += OnMelee;
         _inputs.Player.Melee.canceled += OnMelee;
@@ -99,6 +101,10 @@ public class PlayerCommandManager
         else if(context.action.name == "Weapon3")
         {
             WeaponSelection = 3;
+        }
+        else if(context.action.name == "Weapon4")
+        {
+            WeaponSelection = 4;
         }
     }
 

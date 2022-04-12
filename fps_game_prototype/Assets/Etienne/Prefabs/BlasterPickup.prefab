@@ -522,11 +522,17 @@ MonoBehaviour:
   AmmoCount: 10
   WeaponType: 1
   Range: 0
+  FireRate: 0
   projectile: {fileID: 0}
   particles: {fileID: 0}
+  isScoped: 0
   crossHairUI: {fileID: 0}
   scopeUI: {fileID: 0}
   weaponCamera: {fileID: 0}
   mainCamera: {fileID: 0}
   scopedFOV: 15
+  isARayCaster: 0
+  gunBarrel: {fileID: 0}
+  bulletForce: 0
+  upwardForce: {x: 0, y: 0, z: 0}
   _animator: {fileID: 0}
