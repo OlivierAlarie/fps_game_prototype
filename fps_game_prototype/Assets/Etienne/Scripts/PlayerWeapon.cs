@@ -25,6 +25,8 @@ public class PlayerWeapon : MonoBehaviour
     public Transform gunBarrel;
     Vector3 rayTargetPoint;
     public float bulletForce;
+    public Vector3 upwardForce;
+    public bool isABalloon = false;
 
     [SerializeField] protected Animator _animator;
 
@@ -62,7 +64,11 @@ public class PlayerWeapon : MonoBehaviour
             go.GetComponent<Rigidbody>().AddExplosionForce(250f, rayTargetPoint, 10f);
             Destroy(go, 2.5f);
         }
-        else
+        else if (isABalloon)
+        {
+            BallonSpawner();
+        }
+        else if (!isABalloon && !isARayCaster )
         {
             BulletSpawner();
         }
@@ -154,4 +160,13 @@ public class PlayerWeapon : MonoBehaviour
         bulletFromBarrel.GetComponent<Rigidbody>().AddForce(directionOfBullet.normalized * bulletForce,ForceMode.Impulse);
         Destroy(bulletFromBarrel,2.5f);
     }
+    public void BallonSpawner()
+    {
+        Vector3 directionOfBullet = rayTargetPoint - gunBarrel.position;
+        GameObject newballoon = Instantiate(projectile,gunBarrel.position,Quaternion.identity);
+        newballoon.transform.forward = directionOfBullet.normalized;
+        newballoon.GetComponent<Rigidbody>().AddForce((directionOfBullet.normalized + upwardForce ) * bulletForce,ForceMode.Impulse);
+        newballoon.AddComponent<WaterBalloon>();
+    }
+
 }
