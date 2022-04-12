@@ -9,8 +9,10 @@ public class EnemyFollowState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager manager)
     {
-        manager.Enemy.Agent.SetDestination(manager.Enemy.Target.transform.position);
-        Quaternion lookRotation = Quaternion.LookRotation(manager.Enemy.Target.transform.position - manager.Enemy.transform.position,Vector3.up);
+        Vector3 targetPos = manager.Enemy.Target.transform.position;
+        Vector3 enemyPos = manager.Enemy.transform.position;
+        manager.Enemy.Agent.SetDestination(targetPos);
+        Quaternion lookRotation = Quaternion.LookRotation(targetPos - enemyPos, Vector3.up);
         manager.Enemy.transform.rotation = Quaternion.Slerp(manager.Enemy.transform.rotation, lookRotation, Time.deltaTime * 25f);
 
         if (manager.Enemy.Target == null)
@@ -18,7 +20,8 @@ public class EnemyFollowState : EnemyBaseState
             manager.SwitchState(manager.IdleState);
         }
 
-        if (Vector3.Distance(manager.Enemy.Target.transform.position, manager.Enemy.transform.position) <= manager.Enemy.IdealDistance)
+        UnityEngine.AI.NavMeshHit hit;
+        if (Vector3.Distance(targetPos, enemyPos) <= manager.Enemy.IdealDistance && !manager.Enemy.Agent.Raycast(targetPos,out hit))
         {
             manager.SwitchState(manager.AttackState);
         }

@@ -13,20 +13,20 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager manager)
     {
+
         if (_canTryAttacking)
         {
             manager.Enemy.StartCoroutine(TryAttack(manager));
         }
-        Debug.Log(_attackAttempts);
 
         Quaternion lookRotation = Quaternion.LookRotation(manager.Enemy.Target.transform.position - manager.Enemy.transform.position, Vector3.up);
         manager.Enemy.transform.rotation = Quaternion.Slerp(manager.Enemy.transform.rotation, lookRotation, Time.deltaTime * 25f);
 
-        /*
-        if (_attackAttempts <= 0)
+        UnityEngine.AI.NavMeshHit hit;
+        if (_attackAttempts <= 0 || manager.Enemy.Agent.Raycast(manager.Enemy.Target.transform.position, out hit))
         {
             manager.SwitchState(manager.FollowState);
-        }*/
+        }
 
         if(manager.Enemy.Target == null)
         {
@@ -46,6 +46,10 @@ public class EnemyAttackState : EnemyBaseState
         {
             yield return new WaitForSeconds(manager.Enemy.Weapon.Melee());
         }
-        _canTryAttacking = true;
+
+        if(_attackAttempts > 0)
+        {
+            _canTryAttacking = true;
+        }
     }
 }
