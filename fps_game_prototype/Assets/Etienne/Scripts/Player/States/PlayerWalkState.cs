@@ -22,7 +22,7 @@ public class PlayerWalkState : PlayerBaseState
             manager.SwitchState(manager.JumpState);
         }
 
-        if (manager.Player.CharacterController.isGrounded)
+        if (!manager.Player.CharacterController.isGrounded)
         {
             manager.SwitchState(manager.FallState);
         }

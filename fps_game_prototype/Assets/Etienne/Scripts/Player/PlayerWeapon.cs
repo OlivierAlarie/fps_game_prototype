@@ -40,6 +40,10 @@ public class PlayerWeapon : MonoBehaviour
 
         AmmoCount--;
         //Fire Animation
+        if(_animator != null)
+        {
+            _animator.Play("Fire");
+        }
         if (particles != null)
         {
             particles.Play();
@@ -149,7 +153,11 @@ public class PlayerWeapon : MonoBehaviour
     IEnumerator DelayBetWeenShots()
     {
         canFire = false;
-        yield return new WaitForSeconds(FireRate);
+        while (!_animator.GetCurrentAnimatorStateInfo(1).IsName("Fire"))
+        {
+            yield return null;
+        }
+        yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(1).length);
         canFire = true;
     }
     private void BulletSpawner()

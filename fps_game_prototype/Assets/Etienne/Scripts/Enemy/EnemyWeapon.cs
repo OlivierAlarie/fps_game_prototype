@@ -16,6 +16,7 @@ public class EnemyWeapon : MonoBehaviour
     {
 
         //Play Fire Animation;
+        //_animator.Play("Fire");
         GameObject bulletFromBarrel = Instantiate(Projectile, ProjectileSpawnPoint.position, Quaternion.identity);
         bulletFromBarrel.transform.forward = ProjectileSpawnPoint.forward;
         bulletFromBarrel.GetComponent<Rigidbody>().AddForce(ProjectileSpawnPoint.forward * ProjectileForce, ForceMode.Impulse);
