@@ -12,8 +12,6 @@ public class EnemyFollowState : EnemyBaseState
         Vector3 targetPos = manager.Enemy.Target.transform.position;
         Vector3 enemyPos = manager.Enemy.transform.position;
         manager.Enemy.Agent.SetDestination(targetPos);
-        Quaternion lookRotation = Quaternion.LookRotation(targetPos - enemyPos, Vector3.up);
-        manager.Enemy.transform.rotation = Quaternion.Slerp(manager.Enemy.transform.rotation, lookRotation, Time.deltaTime * 25f);
 
         if (manager.Enemy.Target == null)
         {

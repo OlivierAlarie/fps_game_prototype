@@ -10,6 +10,7 @@ public class EnemyStateManager
     public EnemyIdleState IdleState = new EnemyIdleState();
     public EnemyFollowState FollowState = new EnemyFollowState();
     public EnemyAttackState AttackState = new EnemyAttackState();
+    public EnemyRepositionState ReloadState = new EnemyRepositionState();
 
     public EnemyStateManager(Enemy enemy)
     {

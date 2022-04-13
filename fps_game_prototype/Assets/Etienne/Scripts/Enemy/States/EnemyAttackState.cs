@@ -14,29 +14,32 @@ public class EnemyAttackState : EnemyBaseState
     public override void UpdateState(EnemyStateManager manager)
     {
 
-        if (_canTryAttacking)
+        Quaternion lookRotation = Quaternion.LookRotation(manager.Enemy.Target.transform.position - manager.Enemy.transform.position, Vector3.up);
+        manager.Enemy.transform.rotation = Quaternion.Slerp(manager.Enemy.transform.rotation, lookRotation, Time.deltaTime * 25f);
+
+        Ray r = new Ray(manager.Enemy.transform.position, manager.Enemy.transform.forward);
+        LayerMask lm = LayerMask.GetMask("Player");
+        if (_canTryAttacking && Physics.Raycast(r,float.PositiveInfinity,lm))
         {
             manager.Enemy.StartCoroutine(TryAttack(manager));
         }
 
-        Quaternion lookRotation = Quaternion.LookRotation(manager.Enemy.Target.transform.position - manager.Enemy.transform.position, Vector3.up);
-        manager.Enemy.transform.rotation = Quaternion.Slerp(manager.Enemy.transform.rotation, lookRotation, Time.deltaTime * 25f);
-
-        UnityEngine.AI.NavMeshHit hit;
-        if (_attackAttempts <= 0 || manager.Enemy.Agent.Raycast(manager.Enemy.Target.transform.position, out hit))
+        UnityEngine.AI.NavMeshHit navmeshhit;
+        if (_attackAttempts <= 0 || manager.Enemy.Agent.Raycast(manager.Enemy.Target.transform.position, out navmeshhit))
         {
-            manager.SwitchState(manager.FollowState);
+            manager.Enemy.StopAllCoroutines();
+            manager.SwitchState(manager.ReloadState);
         }
 
         if(manager.Enemy.Target == null)
         {
+            manager.Enemy.StopAllCoroutines();
             manager.SwitchState(manager.IdleState);
         }
     }
 
     IEnumerator TryAttack(EnemyStateManager manager)
     {
-        _attackAttempts--;
         _canTryAttacking = false;
         if (Vector3.Distance(manager.Enemy.Target.transform.position, manager.Enemy.transform.position) > manager.Enemy.ClosestDistance)
         {
@@ -46,8 +49,8 @@ public class EnemyAttackState : EnemyBaseState
         {
             yield return new WaitForSeconds(manager.Enemy.Weapon.Melee());
         }
-
-        if(_attackAttempts > 0)
+        _attackAttempts--;
+        if (_attackAttempts > 0)
         {
             _canTryAttacking = true;
         }
