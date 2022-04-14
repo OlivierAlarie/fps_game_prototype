@@ -19,8 +19,8 @@ public class EnemyFollowState : EnemyBaseState
             manager.SwitchState(manager.IdleState);
         }
 
-        UnityEngine.AI.NavMeshHit hit;
-        if (Vector3.Distance(targetPos, enemyPos) <= manager.Enemy.IdealDistance && !manager.Enemy.Agent.Raycast(targetPos,out hit))
+        UnityEngine.AI.NavMeshHit navmeshhit;
+        if (Vector3.Distance(targetPos, enemyPos) <= manager.Enemy.IdealDistance && !manager.Enemy.Agent.Raycast(targetPos, out navmeshhit))
         {
             manager.SwitchState(manager.AttackState);
         }

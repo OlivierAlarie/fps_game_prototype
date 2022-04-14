@@ -1,3 +1,6 @@
+using System.Collections;
+using UnityEngine;
+
 public class EnemyIdleState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager manager)
@@ -8,10 +11,19 @@ public class EnemyIdleState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager manager)
     {
+        if(manager.Enemy.Target == null)
+        {
+            return;
+        }
 
-        if(manager.Enemy.Target != null)
+        if (manager.Enemy.Type == Enemy.EnemyType.Aggressive)
         {
             manager.SwitchState(manager.FollowState);
+        }
+
+        if (manager.Enemy.Type == Enemy.EnemyType.Static)
+        {
+            manager.SwitchState(manager.AttackState);
         }
     }
 }

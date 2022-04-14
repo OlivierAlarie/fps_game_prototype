@@ -17,7 +17,13 @@ public class Enemy : MonoBehaviour
     public CharacterController CharacterController;
     public EnemyStateManager StateManager;
     public EnemyWeapon Weapon;
+    public EnemyType Type = EnemyType.Static;
 
+    public enum EnemyType
+    {
+        Static,
+        Aggressive
+    }
 
     private void Start()
     {

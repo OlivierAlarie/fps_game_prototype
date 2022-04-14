@@ -20,22 +20,37 @@ public class EnemyAttackState : EnemyBaseState
 
         Ray r = new Ray(manager.Enemy.transform.position, manager.Enemy.transform.forward);
         LayerMask lm = LayerMask.GetMask("Player");
-        if (_canTryAttacking && Physics.Raycast(r,float.PositiveInfinity,lm))
-        {
-            manager.Enemy.StartCoroutine(TryAttack(manager));
-        }
 
-        UnityEngine.AI.NavMeshHit navmeshhit;
-        if (_attackAttempts <= 0 || manager.Enemy.Agent.Raycast(manager.Enemy.Target.transform.position, out navmeshhit))
+        if(manager.Enemy.Type == Enemy.EnemyType.Aggressive)
         {
-            manager.Enemy.StopAllCoroutines();
-            manager.SwitchState(manager.ReloadState);
-        }
+            if (_canTryAttacking && Physics.Raycast(r, float.PositiveInfinity, lm))
+            {
+                manager.Enemy.StartCoroutine(TryAttack(manager));
+            }
 
-        if(manager.Enemy.Target == null)
+            UnityEngine.AI.NavMeshHit navmeshhit;
+            if (_attackAttempts <= 0 || manager.Enemy.Agent.Raycast(manager.Enemy.Target.transform.position, out navmeshhit))
+            {
+                manager.Enemy.StopAllCoroutines();
+                manager.SwitchState(manager.RepositionState);
+            }
+
+            if (manager.Enemy.Target == null)
+            {
+                manager.Enemy.StopAllCoroutines();
+                manager.SwitchState(manager.IdleState);
+            }
+        }
+        else if(manager.Enemy.Type == Enemy.EnemyType.Static)
         {
-            manager.Enemy.StopAllCoroutines();
-            manager.SwitchState(manager.IdleState);
+            //Attacks indefinitely;
+            _attackAttempts = manager.Enemy.NumberOfAttackAttempts;
+            //If the player is in the range
+            RaycastHit hit;
+            if (_canTryAttacking && Physics.Raycast(r, out hit, manager.Enemy.IdealDistance) && hit.collider.CompareTag("Player"))
+            {
+                manager.Enemy.StartCoroutine(TryAttack(manager));
+            }
         }
     }
 
@@ -51,7 +66,6 @@ public class EnemyAttackState : EnemyBaseState
         yield return new WaitForSeconds(1f);
         manager.Enemy.Animator.SetInteger("State", 1);
         yield return new WaitForSeconds(0.5f);
-        //yield return new WaitForSeconds(manager.Enemy.Animator.GetCurrentAnimatorStateInfo(0).length);
         _attackAttempts--;
         if (_attackAttempts > 0)
         {
