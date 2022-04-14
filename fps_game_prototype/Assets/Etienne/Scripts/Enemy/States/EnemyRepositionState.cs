@@ -16,6 +16,8 @@ public class EnemyRepositionState : EnemyBaseState
             flip = -1;
         }
         manager.Enemy.Agent.SetDestination(manager.Enemy.transform.right*Random.Range(3,5)*flip + manager.Enemy.transform.position);
+
+        manager.Enemy.Animator.SetInteger("State", 2);
     }
 
     public override void UpdateState(EnemyStateManager manager)

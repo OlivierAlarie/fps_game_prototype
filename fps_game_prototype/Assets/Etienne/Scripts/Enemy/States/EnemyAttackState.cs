@@ -9,6 +9,7 @@ public class EnemyAttackState : EnemyBaseState
         manager.Enemy.Agent.isStopped = true;
         _attackAttempts = manager.Enemy.NumberOfAttackAttempts;
         _canTryAttacking = true;
+        manager.Enemy.Animator.SetInteger("State", 1);
     }
 
     public override void UpdateState(EnemyStateManager manager)
@@ -41,14 +42,16 @@ public class EnemyAttackState : EnemyBaseState
     IEnumerator TryAttack(EnemyStateManager manager)
     {
         _canTryAttacking = false;
-        if (Vector3.Distance(manager.Enemy.Target.transform.position, manager.Enemy.transform.position) > manager.Enemy.ClosestDistance)
+        manager.Enemy.Animator.SetInteger("State",3);
+        while(!manager.Enemy.Animator.GetCurrentAnimatorStateInfo(0).IsName("Shooting"))
         {
-            yield return new WaitForSeconds(manager.Enemy.Weapon.Fire());
+            yield return null;
         }
-        else
-        {
-            yield return new WaitForSeconds(manager.Enemy.Weapon.Melee());
-        }
+        manager.Enemy.Weapon.Fire();
+        yield return new WaitForSeconds(1f);
+        manager.Enemy.Animator.SetInteger("State", 1);
+        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(manager.Enemy.Animator.GetCurrentAnimatorStateInfo(0).length);
         _attackAttempts--;
         if (_attackAttempts > 0)
         {

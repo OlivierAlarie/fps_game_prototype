@@ -5,6 +5,7 @@ public class EnemyFollowState : EnemyBaseState
     public override void EnterState(EnemyStateManager manager)
     {
         manager.Enemy.Agent.isStopped = false;
+        manager.Enemy.Animator.SetInteger("State", 2);
     }
 
     public override void UpdateState(EnemyStateManager manager)

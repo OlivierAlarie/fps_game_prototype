@@ -21,7 +21,6 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        Animator = GetComponent<Animator>();
         CharacterController = GetComponent<CharacterController>();
         Agent = GetComponent<NavMeshAgent>();
         StateManager = new EnemyStateManager(this);
