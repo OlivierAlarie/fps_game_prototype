@@ -22,7 +22,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - HealthPanel
   - 
   - 
   - 
@@ -45,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: hud
+    uniqueID: 3015805667
     locked: 0
