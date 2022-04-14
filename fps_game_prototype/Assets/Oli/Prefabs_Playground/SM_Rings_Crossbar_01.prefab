@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6607184027147214125}
   - component: {fileID: 1963748166804103597}
   - component: {fileID: 8519038235876067388}
+  - component: {fileID: 874506914782982737}
   m_Layer: 0
   m_Name: SM_Rings_Crossbar_01
   m_TagString: Untagged
@@ -31,6 +32,7 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -51.829765, y: 9.300001, z: -21.370775}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,10 +56,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -82,6 +86,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &6607184027147214125
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -121,3 +126,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0946459, y: 2.018657, z: 0.10785723}
   m_Center: {x: -0.000000007450581, y: 1.0093278, z: 1.5258393}
+--- !u!208 &874506914782982737
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4455263080433830715}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.047000002, y: 1.264, z: 1.395}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1.264, z: 0}
+  m_TimeToStationary: 0.5
