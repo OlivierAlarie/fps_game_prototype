@@ -29,6 +29,10 @@ public class Script_de_lamie : MonoBehaviour
      *4. Un IENUMERATOR Coroutine qui fait en sorte que le text soit lisible assez longtemps.
      *5. après la coroutine, le text disparait.
      *6. Après que le text disparaisse, le jus spawn au spawn de jus.
+     *
+     *1 coroutine
+     *if else premier et deuxieme text
+     *bool pendant que le text apparait.
      * */
 
     // Update is called once per frame
