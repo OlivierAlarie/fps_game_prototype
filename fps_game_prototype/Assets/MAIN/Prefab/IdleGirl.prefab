@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 1020339011279648080}
   - component: {fileID: 694189386873868988}
   - component: {fileID: 694189386873868989}
+  - component: {fileID: 5311922017706632087}
   m_Layer: 0
   m_Name: IdleGirl
   m_TagString: Untagged
@@ -147,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388198248889429994}
   m_LocalRotation: {x: -0, y: 0.78955966, z: -0, w: -0.6136739}
-  m_LocalPosition: {x: 37.54, y: 7, z: 40.52}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -155,6 +156,8 @@ Transform:
   - {fileID: 6966479345733207738}
   - {fileID: 6917466331007717909}
   - {fileID: 4789765258225227204}
+  - {fileID: 3295090074812806607}
+  - {fileID: 5571109736599666423}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 255.711, z: 0}
@@ -193,6 +196,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5311922017706632087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388198248889429994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc3e77e573d59a4e9738e29ee74bab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _laPremiereChoseQuElleVaDire: salut prend ce petit jus
+  _leTexteDuDialogue: {fileID: 0}
+  _laDeuxiemeChoseQuElleVaDire: tu as deja ton petit jus
+  _leSpawnDuPtitJus: {fileID: 3295090074812806607}
+  _leSpawnDuPtitlait: {fileID: 5571109736599666423}
+  _lesPtitsJusCestPourLesLunchs: {fileID: 7084708509854545861, guid: 2b5041834237b2d4eaae73ad2c64b5d8, type: 3}
+  _lesPtitsLaitCestCorrect: {fileID: 7485443335002433305, guid: f4d88c1c13598934a9ead67b2b3af6fd, type: 3}
 --- !u!1 &479423411493948593
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,6 +1071,37 @@ Transform:
   m_Father: {fileID: 8718190417149305595}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5375326013043577527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5571109736599666423}
+  m_Layer: 0
+  m_Name: Ptitlait_Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5571109736599666423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5375326013043577527}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.894, y: 0.668, z: 0.702}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1020339011279648080}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6667728034297652784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,6 +1133,37 @@ Transform:
   - {fileID: 5017179697353628769}
   m_Father: {fileID: 4789765258225227204}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6781873126807486060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3295090074812806607}
+  m_Layer: 0
+  m_Name: Ptitjus_Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3295090074812806607
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6781873126807486060}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.884, y: 0.668, z: 1.234}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1020339011279648080}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7061163124907285242
 GameObject:
