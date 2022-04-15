@@ -13,6 +13,7 @@ public class Script_de_lamie : MonoBehaviour
     [SerializeField] private Transform _leSpawnDuPtitJus;
     private bool _jyAiParler;
     [SerializeField] private GameObject _lesPtitsJusCestPourLesLunchs;
+    private bool _jeSuisEnTrainDyParler;
 
     // Start is called before the first frame update
     void Start()
@@ -40,17 +41,21 @@ public class Script_de_lamie : MonoBehaviour
     {
         if (Vector3.Distance(this.transform.position, _thePlayer.transform.position) <= 5f) 
         {
-            _laBulleDeDialogue.SetActive(true);
-            if (_jyAiParler == false)
-            {
-                _leTexteDuDialogue.text = _laPremiereChoseQuElleVaDire;
-                StartCoroutine("LeTexteApparaitPourLaPremiereFois");
-            } else
-            {
-                _leTexteDuDialogue.text = _laDeuxiemeChoseQuElleVaDire;
-                StartCoroutine("LeTexteApparaitPourLaDeuxiemeFois");
+            if (_jeSuisEnTrainDyParler == false) 
+            { 
+                _laBulleDeDialogue.SetActive(true);
+                 if (_jyAiParler == false)
+                 {
+                   _leTexteDuDialogue.text = _laPremiereChoseQuElleVaDire;
+                 StartCoroutine("LeTexteApparaitPourLaPremiereFois");
+                 } else
+                 {
+                   _leTexteDuDialogue.text = _laDeuxiemeChoseQuElleVaDire;
+                  StartCoroutine("LeTexteApparaitPourLaDeuxiemeFois");
+                 }
+                _jeSuisEnTrainDyParler = true;
             }
-            
+
         }
     }
     
@@ -64,6 +69,7 @@ public class Script_de_lamie : MonoBehaviour
         }
         _jyAiParler = true;
         _laBulleDeDialogue.SetActive(false);
+        _jeSuisEnTrainDyParler = false;
         
     }
 
@@ -72,5 +78,6 @@ public class Script_de_lamie : MonoBehaviour
 
         yield return new WaitForSeconds(5.0f);
         _laBulleDeDialogue.SetActive(false);
+        _jeSuisEnTrainDyParler = false;
     }
 }
