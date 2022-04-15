@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     public CharacterController CharacterController;
     public EnemyStateManager StateManager;
     public EnemyWeapon Weapon;
+    public EnemyAudioManager AudioManager;
     public EnemyType Type = EnemyType.Static;
 
     public enum EnemyType
@@ -31,11 +32,26 @@ public class Enemy : MonoBehaviour
         Agent = GetComponent<NavMeshAgent>();
         StateManager = new EnemyStateManager(this);
 
+        AudioManager = GetComponentInChildren<EnemyAudioManager>(true);
         Weapon = GetComponentInChildren<EnemyWeapon>(true);
     }
 
     private void Update()
     {
         StateManager.Update();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        NerfBullet nerfbullet = collision.gameObject.GetComponent<NerfBullet>();
+        if (nerfbullet != null)
+        {
+            if (nerfbullet.Source == "Player" && nerfbullet.CanDamage)
+            {
+                Health -= nerfbullet.Damage;
+                nerfbullet.CanDamage = false;
+                AudioManager.PlayClip("Hurt");
+            }
+        }
     }
 }

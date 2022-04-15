@@ -9,6 +9,7 @@ TagManager:
   - WeaponPickup
   - Enemy
   - Water Splash
+  - EnemyWeapon
   layers:
   - Default
   - TransparentFX

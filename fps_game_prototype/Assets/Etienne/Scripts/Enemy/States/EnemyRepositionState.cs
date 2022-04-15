@@ -26,5 +26,10 @@ public class EnemyRepositionState : EnemyBaseState
         {
             manager.SwitchState(manager.FollowState);
         }
+
+        if (manager.Enemy.Health <= 0)
+        {
+            manager.SwitchState(manager.DeadState);
+        }
     }
 }

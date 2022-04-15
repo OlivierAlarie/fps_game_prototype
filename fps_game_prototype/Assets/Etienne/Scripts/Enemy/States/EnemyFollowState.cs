@@ -24,5 +24,10 @@ public class EnemyFollowState : EnemyBaseState
         {
             manager.SwitchState(manager.AttackState);
         }
+
+        if (manager.Enemy.Health <= 0)
+        {
+            manager.SwitchState(manager.DeadState);
+        }
     }
 }

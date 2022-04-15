@@ -11,6 +11,7 @@ public class EnemyStateManager
     public EnemyFollowState FollowState = new EnemyFollowState();
     public EnemyAttackState AttackState = new EnemyAttackState();
     public EnemyRepositionState RepositionState = new EnemyRepositionState();
+    public EnemyDeadState DeadState = new EnemyDeadState();
 
     public EnemyStateManager(Enemy enemy)
     {

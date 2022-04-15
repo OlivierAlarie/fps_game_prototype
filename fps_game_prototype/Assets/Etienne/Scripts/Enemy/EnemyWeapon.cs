@@ -16,18 +16,17 @@ public class EnemyWeapon : MonoBehaviour
 
     public void Fire()
     {
+        if(_vfx != null)
+        {
+            _vfx.Play();
+        }
+        if(Projectile != null)
+        {
+            GameObject bulletFromBarrel = Instantiate(Projectile, ProjectileSpawnPoint.position, Quaternion.identity);
+            bulletFromBarrel.transform.forward = EnemySource.forward;
+            bulletFromBarrel.GetComponent<Rigidbody>().AddForce(EnemySource.forward * ProjectileForce, ForceMode.Impulse);
+            Destroy(bulletFromBarrel, 2.5f);
+        }
 
-        //Play Fire Animation;
-        _vfx.Play();
-        GameObject bulletFromBarrel = Instantiate(Projectile, ProjectileSpawnPoint.position, Quaternion.identity);
-        bulletFromBarrel.transform.forward = EnemySource.forward;
-        bulletFromBarrel.GetComponent<Rigidbody>().AddForce(EnemySource.forward * ProjectileForce, ForceMode.Impulse);
-        Destroy(bulletFromBarrel, 2.5f);
-    }
-
-    public float Melee()
-    {
-        //Player Melee Animation;
-        return _meleeDelay;
     }
 }

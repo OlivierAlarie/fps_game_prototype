@@ -5417,6 +5417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animator: {fileID: 0}
   CharacterController: {fileID: 0}
+  Health: 100
   Motion: {x: 0, y: 0, z: 0}
   WalkSpeed: 6
   JumpHeight: 2
@@ -5436,6 +5437,7 @@ GameObject:
   - component: {fileID: 7767427085630949523}
   - component: {fileID: 7767427085630949520}
   - component: {fileID: 7767427085630949533}
+  - component: {fileID: 3458053251038454666}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5540,6 +5542,14 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!81 &3458053251038454666
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7767427085630949526}
+  m_Enabled: 1
 --- !u!1001 &2914761534216020471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5892,7 +5902,7 @@ MonoBehaviour:
   WeaponType: 3
   Range: 50
   FireRate: 0
-  projectile: {fileID: 7422450222277795463, guid: 38f46e040bd14ed4b8eda1c7b4c42b54, type: 3}
+  projectile: {fileID: 7422450222277795463, guid: c3011364627aaf24993267e2a3838fd8, type: 3}
   particles: {fileID: 0}
   isScoped: 0
   crossHairUI: {fileID: 0}
@@ -6134,7 +6144,7 @@ MonoBehaviour:
   WeaponType: 1
   Range: 10
   FireRate: 0.05
-  projectile: {fileID: 7422450222277795463, guid: 38f46e040bd14ed4b8eda1c7b4c42b54, type: 3}
+  projectile: {fileID: 7422450222277795463, guid: c3011364627aaf24993267e2a3838fd8, type: 3}
   particles: {fileID: 6741740860798953471}
   isScoped: 0
   crossHairUI: {fileID: 0}

@@ -52,6 +52,13 @@ public class EnemyAttackState : EnemyBaseState
                 manager.Enemy.StartCoroutine(TryAttack(manager));
             }
         }
+
+
+        if (manager.Enemy.Health <= 0)
+        {
+            manager.Enemy.StopAllCoroutines();
+            manager.SwitchState(manager.DeadState);
+        }
     }
 
     IEnumerator TryAttack(EnemyStateManager manager)
@@ -62,8 +69,12 @@ public class EnemyAttackState : EnemyBaseState
         {
             yield return null;
         }
-        manager.Enemy.Weapon.Fire();
-        yield return new WaitForSeconds(1f);
+        if(manager.Enemy.Weapon != null)
+        {
+            manager.Enemy.Weapon.Fire();
+            manager.Enemy.AudioManager.PlayClip("Attack");
+        }
+        yield return new WaitForSeconds(manager.Enemy.Animator.GetCurrentAnimatorStateInfo(0).length);
         manager.Enemy.Animator.SetInteger("State", 1);
         yield return new WaitForSeconds(0.5f);
         _attackAttempts--;

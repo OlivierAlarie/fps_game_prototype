@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 400485865833038065}
   - component: {fileID: 6349440427612104016}
   m_Layer: 0
-  m_Name: Nerf Bullet Forward
+  m_Name: NerfBulletEnemyPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107057a2406e13844b4a43d6278b2876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Source: 
-  Damage: 0
+  Source: Enemy
+  Damage: 5
   CanDamage: 1
 --- !u!33 &6621940854453717912
 MeshFilter:

@@ -10,7 +10,9 @@ public class Player : MonoBehaviour
     public PlayerCommandManager CommandManager;
     public PlayerStateManager StateManager;
     public PlayerWeaponManager WeaponManager;
-    //public PlayerEventManager EventManager; ? for Collisions and Game Events
+
+    // HEALTH & STATUS VARIABLES
+    public int Health = 100;
 
     // MOVEMENT VARIABLES
     public Vector3 Motion;
@@ -78,6 +80,25 @@ public class Player : MonoBehaviour
         if (other.CompareTag("WeaponPickup"))
         {
             WeaponManager.AddWeapon(other.GetComponent<PlayerWeapon>());
+        }
+        if (other.CompareTag("EnemyWeapon"))
+        {
+            Health -= other.GetComponent<EnemyWeapon>().Damage;
+            //Play Hurt Feedback
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        NerfBullet nerfbullet = collision.gameObject.GetComponent<NerfBullet>();
+        if (nerfbullet != null)
+        {
+            if(nerfbullet.Source == "Enemy" && nerfbullet.CanDamage)
+            {
+                Health -= nerfbullet.Damage;
+                nerfbullet.CanDamage = false;
+                //Play Hurt Feedback
+            }
         }
     }
 }

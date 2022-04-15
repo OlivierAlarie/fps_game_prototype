@@ -11,7 +11,12 @@ public class EnemyIdleState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager manager)
     {
-        if(manager.Enemy.Target == null)
+        if (manager.Enemy.Health <= 0)
+        {
+            manager.SwitchState(manager.DeadState);
+        }
+
+        if (manager.Enemy.Target == null)
         {
             return;
         }
