@@ -264,8 +264,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d093e8c3e95b54d8b6a94cdfe045da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crossSectionMaterial: {fileID: 2100000, guid: edd4ea4857d54aa479906c86743e2097, type: 2}
-  prevShatters: []
 --- !u!64 &79009367
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35924,8 +35922,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d093e8c3e95b54d8b6a94cdfe045da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crossSectionMaterial: {fileID: 2100000, guid: edd4ea4857d54aa479906c86743e2097, type: 2}
-  prevShatters: []
 --- !u!64 &592889759
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -37191,8 +37187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d093e8c3e95b54d8b6a94cdfe045da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crossSectionMaterial: {fileID: 2100000, guid: edd4ea4857d54aa479906c86743e2097, type: 2}
-  prevShatters: []
 --- !u!64 &1520527885
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -38545,8 +38539,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d093e8c3e95b54d8b6a94cdfe045da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crossSectionMaterial: {fileID: 2100000, guid: edd4ea4857d54aa479906c86743e2097, type: 2}
-  prevShatters: []
 --- !u!43 &1836079160
 Mesh:
   m_ObjectHideFlags: 0
@@ -39204,8 +39196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d093e8c3e95b54d8b6a94cdfe045da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crossSectionMaterial: {fileID: 2100000, guid: edd4ea4857d54aa479906c86743e2097, type: 2}
-  prevShatters: []
 --- !u!64 &1900365315
 MeshCollider:
   m_ObjectHideFlags: 0
