@@ -16,6 +16,7 @@ public class Script_de_lamie : MonoBehaviour
     [SerializeField] private GameObject _lesPtitsJusCestPourLesLunchs;
     [SerializeField] private GameObject _lesPtitsLaitCestCorrect;
     private bool _jeSuisEnTrainDyParler;
+    [SerializeField] private bool _onVeutQuelleDropDuLait;
 
     // Start is called before the first frame update
     void Start()
@@ -68,7 +69,10 @@ public class Script_de_lamie : MonoBehaviour
         if (_jyAiParler == false)
         {
             Instantiate(_lesPtitsJusCestPourLesLunchs, _leSpawnDuPtitJus.transform.position, _leSpawnDuPtitJus.transform.rotation);
-            Instantiate(_lesPtitsLaitCestCorrect, _leSpawnDuPtitlait.transform.position, _leSpawnDuPtitlait.transform.rotation);
+            if (_onVeutQuelleDropDuLait == true)
+            {
+                Instantiate(_lesPtitsLaitCestCorrect, _leSpawnDuPtitlait.transform.position, _leSpawnDuPtitlait.transform.rotation);
+            }
         }
         _jyAiParler = true;
         _laBulleDeDialogue.SetActive(false);
