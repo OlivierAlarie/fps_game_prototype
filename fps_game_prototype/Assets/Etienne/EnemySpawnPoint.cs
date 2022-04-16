@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawnPoint : MonoBehaviour
 {
-    public GameObject Target;
+    private Player _target;
 
     [SerializeField]
     private GameObject _enemyPrefab;
@@ -24,7 +24,6 @@ public class EnemySpawnPoint : MonoBehaviour
         if(Time.time > _triggerTimer)
         {
             Enemy newenemy = Instantiate(_enemyPrefab, transform.position, Quaternion.identity).GetComponent<Enemy>();
-            newenemy.Target = Target;
             _numberOfTriggers--;
             if (_numberOfTriggers <= 0)
             {

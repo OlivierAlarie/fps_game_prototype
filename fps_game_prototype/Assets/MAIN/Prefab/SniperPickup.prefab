@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxAmmo: 0
-  AmmoCount: 5
+  AmmoCount: 4
   WeaponType: 3
   Range: 0
   FireRate: 0

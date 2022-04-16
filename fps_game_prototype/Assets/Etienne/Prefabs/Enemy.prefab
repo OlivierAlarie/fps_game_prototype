@@ -111,7 +111,7 @@ MonoBehaviour:
   CharacterController: {fileID: 0}
   Weapon: {fileID: 2025588970157235059, guid: 57ed79c3c97f0f24da5aaec3447b7e5c, type: 3}
   AudioManager: {fileID: 0}
-  Type: 0
+  Type: 1
   TheGunToDrop: {fileID: 25878929121117327, guid: 17943ed9e4576de4aa1383168417eca5, type: 3}
 --- !u!195 &62481760768881898
 NavMeshAgent:

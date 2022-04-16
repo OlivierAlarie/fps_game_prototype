@@ -62,7 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxAmmo: 0
   AmmoCount: 10
-  WeaponType: 1
+  WeaponType: 2
   Range: 0
   FireRate: 0
   projectile: {fileID: 0}
