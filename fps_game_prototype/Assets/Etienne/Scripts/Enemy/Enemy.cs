@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     public EnemyWeapon Weapon;
     public EnemyAudioManager AudioManager;
     public EnemyType Type = EnemyType.Static;
+    public GameObject TheGunToDrop;
 
     public enum EnemyType
     {

@@ -112,6 +112,7 @@ MonoBehaviour:
   Weapon: {fileID: 0}
   AudioManager: {fileID: 0}
   Type: 0
+  TheGunToDrop: {fileID: 4233320990421171686, guid: 90e29e5270ca0c949830102ccad87318, type: 3}
 --- !u!195 &937954477243178140
 NavMeshAgent:
   m_ObjectHideFlags: 0
