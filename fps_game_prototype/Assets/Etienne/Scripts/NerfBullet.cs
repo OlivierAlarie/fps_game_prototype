@@ -13,7 +13,8 @@ public class NerfBullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        GetComponent<Rigidbody>().velocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity/2, collision.GetContact(0).normal);
+        GetComponent<Rigidbody>().useGravity = true;
+        GetComponent<Rigidbody>().velocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity/5, collision.GetContact(0).normal);
         GetComponent<Rigidbody>().AddTorque(transform.right * 5f,ForceMode.Impulse);
         if(_ps != null && !_psPlayed)
         {
