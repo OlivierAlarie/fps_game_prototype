@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class EnemySpawnPoint : MonoBehaviour
 {
+    public GameObject Target;
+
     [SerializeField]
     private GameObject _enemyPrefab;
     [SerializeField]
     private float _triggerDelay;
     private float _triggerTimer;
     [SerializeField]
-    private bool _triggerOnce = true;
+    private int _numberOfTriggers = 1;
     private void Awake()
     {
         _triggerTimer = Time.time + _triggerDelay;
@@ -21,8 +23,10 @@ public class EnemySpawnPoint : MonoBehaviour
     {
         if(Time.time > _triggerTimer)
         {
-            Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
-            if (_triggerOnce)
+            Enemy newenemy = Instantiate(_enemyPrefab, transform.position, Quaternion.identity).GetComponent<Enemy>();
+            newenemy.Target = Target;
+            _numberOfTriggers--;
+            if (_numberOfTriggers <= 0)
             {
                 _triggerTimer = float.PositiveInfinity;
             }
