@@ -10,8 +10,6 @@ public class HUD : MonoBehaviour
     [SerializeField]
     private Player _player;
     [SerializeField]
-    private PlayerWeapon _playerWeapon;
-    [SerializeField]
     private GameObject _fullHealth;
     [SerializeField]
     private GameObject _mediumHealth;
