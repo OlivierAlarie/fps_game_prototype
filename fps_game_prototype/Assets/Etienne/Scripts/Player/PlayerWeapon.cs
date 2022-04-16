@@ -64,9 +64,7 @@ public class PlayerWeapon : MonoBehaviour
         //InstantiateProjectile
         if (isARayCaster)
         {
-            GameObject go = Instantiate(projectile, rayTargetPoint, Quaternion.identity);
-            go.GetComponent<Rigidbody>().AddExplosionForce(250f, rayTargetPoint, 10f);
-            Destroy(go, 2.5f);
+            //Do Nothing
         }
         else if (isABalloon)
         {

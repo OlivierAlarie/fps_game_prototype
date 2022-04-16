@@ -19,20 +19,10 @@ public class PlayerWeaponManager
         CurrentWeapon.Fire();
     }
 
-    public void FireMeleeWeapon()
-    {
-        if(_weapons[0] == null || (CurrentWeapon != null && CurrentWeapon.isScoped))
-        {
-            return;
-        }
-
-        ((MeleeWeapon)_weapons[0]).Fire();
-    }
-
     public void SwitchWeapon(int weaponselect)
     {
         //If weapon doesn't exist, hasn't been picked up yet or is in scope view
-        if (_weapons[weaponselect] == null || !_weapons[weaponselect].isActiveAndEnabled || CurrentWeapon.isScoped)
+        if (_weapons[weaponselect] == null || !_weapons[weaponselect].isActiveAndEnabled || (CurrentWeapon != null && CurrentWeapon.isScoped))
         {
             return;
         }
@@ -50,6 +40,10 @@ public class PlayerWeaponManager
         if(_weapons[weapon.WeaponType] == null)
         {
             _weapons[weapon.WeaponType] = weapon;
+            if (weapon.isActiveAndEnabled)
+            {
+                SwitchWeapon(weapon.WeaponType);
+            }
         }
         else if (!_weapons[weapon.WeaponType].isActiveAndEnabled)
         {
