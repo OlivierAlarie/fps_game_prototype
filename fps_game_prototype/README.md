@@ -21,3 +21,11 @@ Right Stick - Look Around
 
 Instructions: 
 (WIP)
+
+
+Credits:
+
+mixamo.com for animations
+Playground set by ArtStudios3d (artstudios3d.wixsite.com/artstudios3d)
+School bus by Zeeshanhameed on www.cgtrader.com
+Font Kids Written from 1001fonts.com by Galdino Otten (galdinootten.com)
