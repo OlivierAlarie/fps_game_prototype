@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 375131140375874352}
   - component: {fileID: 3389639496833056400}
   - component: {fileID: 6614446960118308977}
+  - component: {fileID: 6855844760645866758}
   m_Layer: 0
   m_Name: Tree_With_Grass
   m_TagString: Untagged
@@ -112,6 +113,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6208954, y: 3.189845, z: 0.56837463}
   m_Center: {x: 0.041526794, y: 1.5903966, z: 0.013388157}
+--- !u!208 &6855844760645866758
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2176443379433679589}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.315, y: 2.7930002, z: 0.25}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.29700002, y: 2.789, z: 0.18400002}
+  m_TimeToStationary: 0.5
 --- !u!1001 &4939178591653464814
 PrefabInstance:
   m_ObjectHideFlags: 0
