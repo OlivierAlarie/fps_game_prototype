@@ -61,6 +61,9 @@ public class PauseMenu : MonoBehaviour
         _pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         _isPaused = true;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
     public void Resume()
     {
@@ -71,11 +74,14 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(1);
+
     }
 
     public void MainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 

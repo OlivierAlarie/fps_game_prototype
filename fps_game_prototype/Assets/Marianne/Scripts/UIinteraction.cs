@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class UIinteraction : MonoBehaviour
 {
@@ -13,6 +16,14 @@ public class UIinteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Mouse.current.leftButton.wasReleasedThisFrame)
+        {
+            GetUiElementsClicked();
+        }
+    }
+
+    void GetUiElementsClicked()
+    {
+
     }
 }
