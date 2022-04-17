@@ -45,9 +45,10 @@ public class PauseMenu : MonoBehaviour
     {
         if(_player.Health <= 0)
         {
-            _gameOver.SetActive(true);
+            GameOver();
         }
     }
+
     private void DeterminePause()
     {
         if (_isPaused)
@@ -56,6 +57,13 @@ public class PauseMenu : MonoBehaviour
             PauseGame();
     }
     
+    private void GameOver()
+    {
+        _gameOver.SetActive(true);
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
     public void PauseGame()
     {
         _pauseMenu.SetActive(true);
