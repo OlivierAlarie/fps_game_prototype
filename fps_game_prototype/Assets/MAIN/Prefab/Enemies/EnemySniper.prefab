@@ -104,7 +104,7 @@ MonoBehaviour:
   Health: 20
   Agent: {fileID: 0}
   Target: {fileID: 0}
-  IdealDistance: 30
+  IdealDistance: 40
   ClosestDistance: 2
   NumberOfAttackAttempts: 3
   Animator: {fileID: 4027663287824121069}
@@ -132,7 +132,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1
+  m_BaseOffset: 0.92
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!136 &5085237208905974967

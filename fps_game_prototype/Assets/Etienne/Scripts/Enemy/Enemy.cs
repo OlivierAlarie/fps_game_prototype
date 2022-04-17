@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public int Health;
 
     public NavMeshAgent Agent;
-    public GameObject Target;
+    public Player Target;
     public float IdealDistance;
     public float ClosestDistance;
     public int NumberOfAttackAttempts;
