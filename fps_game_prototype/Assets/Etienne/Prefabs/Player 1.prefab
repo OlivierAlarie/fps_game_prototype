@@ -771,6 +771,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7767427085630949520}
     - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 303915603}
+    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
       propertyPath: isARayCaster
       value: 1
       objectReference: {fileID: 0}
@@ -778,8 +782,125 @@ PrefabInstance:
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 22408763}
+    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: weaponSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: weaponSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e5368d5e4916f949932cfb7fcad780c, type: 3}
+    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: weaponSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 08c09a8e36b6f184fb0ab4f85519aa2e, type: 3}
+    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: weaponSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: d84c1c1225962e047a80b7dd19e71a3c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+--- !u!1 &3717822975062893109 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1844001152951414842, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+  m_PrefabInstance: {fileID: 3030756570502566415}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &303915603
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3717822975062893109}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &4094771383615666319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}

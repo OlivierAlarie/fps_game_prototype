@@ -11,6 +11,8 @@ public class WaterBalloon : MonoBehaviour
     public float explosionRange = 2.2f;
     public int explosionDamage = 20;
     private Enemy enemy;
+    public AudioClip[] waterBalloonSounds;
+    public AudioSource audioSource;
 
     private void Start() 
     {
@@ -37,8 +39,12 @@ public class WaterBalloon : MonoBehaviour
     public void Explode()
     {
         GameObject go = Instantiate(explosionFX,transform.position,Quaternion.identity);
-        //enemy.GetComponent<Enemy>().Health -= explosionDamage;
-        Destroy(gameObject,0.2f);
+        int g = Random.Range(0,waterBalloonSounds.Length);
+        audioSource.clip = waterBalloonSounds[g];
+        audioSource.Play();
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<Collider>().enabled = false;        
+        Destroy(gameObject,1f);
         Destroy(go,1f);
 
         Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, LayerMask.GetMask("Enemies"));
