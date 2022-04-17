@@ -28,6 +28,9 @@ public class PlayerWeapon : MonoBehaviour
     public float bulletForce;
     public Vector3 upwardForce;
     public bool isABalloon = false;
+    public AudioClip[] weaponSounds;
+    public AudioClip emptyMagazineAudio;
+    public AudioSource audioSource;
 
     [SerializeField] protected Animator _animator;
 
@@ -35,9 +38,23 @@ public class PlayerWeapon : MonoBehaviour
     {
         if (AmmoCount == 0 || !isReady || !canFire)
         {
+            if(AmmoCount == 0)
+            {
+                if(audioSource != null)
+                {
+                    audioSource.clip = emptyMagazineAudio;
+                    audioSource.Play();
+                }                
+            }            
             return;
         }
 
+        if (audioSource != null)
+        {
+            int i = Random.Range(0,weaponSounds.Length);
+            audioSource.clip = weaponSounds[i];
+            audioSource.Play();
+        }        
 
         AmmoCount--;
         //Fire Animation

@@ -40266,6 +40266,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WB PickUp
       objectReference: {fileID: 0}
+    - target: {fileID: 5763916869239050805, guid: 0aea1ff152902024d999117f5d430aea, type: 3}
+      propertyPath: AmmoCount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5763916869239050806, guid: 0aea1ff152902024d999117f5d430aea, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -40319,6 +40323,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8406119760462490475, guid: 4740ce0df76f06b49a5ed8cee92c62b5, type: 3}
+      propertyPath: AmmoCount
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9216162144348130642, guid: 4740ce0df76f06b49a5ed8cee92c62b5, type: 3}
       propertyPath: m_RootOrder
       value: 3
