@@ -68,7 +68,7 @@ public class PlayerWeapon : MonoBehaviour
         }
         else if (isABalloon)
         {
-            BallonSpawner();
+            BalloonSpawner();
         }
         else if (!isABalloon && !isARayCaster )
         {
@@ -166,7 +166,7 @@ public class PlayerWeapon : MonoBehaviour
         bulletFromBarrel.GetComponent<Rigidbody>().AddForce(directionOfBullet.normalized * bulletForce,ForceMode.Impulse);
         Destroy(bulletFromBarrel,2.5f);
     }
-    public void BallonSpawner()
+    public void BalloonSpawner()
     {
         Vector3 directionOfBullet = rayTargetPoint - gunBarrel.position;
         GameObject newballoon = Instantiate(projectile,gunBarrel.position,Quaternion.identity);

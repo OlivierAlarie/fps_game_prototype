@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 4507196766858542013}
   - component: {fileID: 8438315754902119318}
   - component: {fileID: 2291419501515197462}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyJoufflu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
