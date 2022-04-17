@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1368247442745317176}
   - component: {fileID: 2139053984705455462}
+  - component: {fileID: 2784394104489411429}
   m_Layer: 0
   m_Name: Pile_of_Garbage_Bags
   m_TagString: Untagged
@@ -67,6 +68,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.6516876, y: 4.6127796, z: 1}
   m_Center: {x: 2.8258438, y: 1.8063898, z: 0}
+--- !u!208 &2784394104489411429
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368247442745317177}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 2.82, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1368247441837511431
 PrefabInstance:
   m_ObjectHideFlags: 0
