@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
+using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
@@ -29,9 +31,17 @@ public class HUD : MonoBehaviour
     private GameObject _sword;
     [SerializeField]
     private GameObject _waterBalloon;
+    public GameObject redImage;
 
     public void Update()
     {
+        if (Convert.ToInt32(_healthText.text)  > _player.Health)
+        {
+            if (redImage.GetComponent<Image>().color.a <= 0f)
+            {
+                StartCoroutine(GotHurt()); 
+            }            
+        }
         _healthText.text = ("" + _player.Health);
 
         if (_player.Health >= 75)
@@ -91,5 +101,18 @@ public class HUD : MonoBehaviour
             _sword.SetActive(false);
             _waterBalloon.SetActive(true);
         }
+    }
+    private IEnumerator GotHurt()
+    {
+        var newColor = redImage.GetComponent<Image>().color;
+        newColor.a = 0.8f;
+        redImage.GetComponent<Image>().color = newColor; 
+        while(newColor.a > 0)
+        {
+            newColor.a -= 0.02f;
+            redImage.GetComponent<Image>().color = newColor;
+            yield return new WaitForSeconds(0.025f);
+        } 
+        redImage.GetComponent<Image>().color = newColor;    
     }
 }

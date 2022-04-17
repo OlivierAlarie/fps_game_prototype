@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Player : MonoBehaviour
     public PlayerCommandManager CommandManager;
     public PlayerStateManager StateManager;
     public PlayerWeaponManager WeaponManager;
+    
 
     // HEALTH & STATUS VARIABLES
     public int Health = 100;
