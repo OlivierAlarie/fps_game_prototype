@@ -10,14 +10,11 @@ public class WaterBalloon : MonoBehaviour
     private int collisions = 0;
     public float explosionRange = 2.2f;
     public int explosionDamage = 20;
-    public Enemy enemy;
-    
+    private Enemy enemy;
 
     private void Start() 
     {
         enemy = FindObjectOfType<Enemy>();
-        if (explosionFX == null)
-        explosionFX =  GameObject.FindWithTag("Water Splash");
     }
     void OnCollisionEnter(Collision other) 
     {
@@ -47,7 +44,6 @@ public class WaterBalloon : MonoBehaviour
         Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, LayerMask.GetMask("Enemies"));
         for (int i = 0; i < enemies.Length; i++)
         {
-            Debug.Log("Balloon detected enemy" + i);
             enemies[i].GetComponent<Enemy>().Health -= explosionDamage;
         }
     }

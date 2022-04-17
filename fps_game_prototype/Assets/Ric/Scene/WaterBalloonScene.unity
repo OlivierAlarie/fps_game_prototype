@@ -34500,22 +34500,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 548438091, guid: 697c5ee3c99daf04cb1c09da4a39785d, type: 3}
-      propertyPath: crossHairUI
-      value: 
-      objectReference: {fileID: 30795243}
-    - target: {fileID: 944682437, guid: 697c5ee3c99daf04cb1c09da4a39785d, type: 3}
-      propertyPath: scopeUI
-      value: 
-      objectReference: {fileID: 2008957879}
-    - target: {fileID: 944682437, guid: 697c5ee3c99daf04cb1c09da4a39785d, type: 3}
-      propertyPath: crossHairUI
-      value: 
-      objectReference: {fileID: 30795243}
-    - target: {fileID: 2058548883, guid: 697c5ee3c99daf04cb1c09da4a39785d, type: 3}
-      propertyPath: crossHairUI
-      value: 
-      objectReference: {fileID: 30795243}
     - target: {fileID: 7767427084997444266, guid: 697c5ee3c99daf04cb1c09da4a39785d, type: 3}
       propertyPath: m_RootOrder
       value: 2

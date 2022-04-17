@@ -172,7 +172,6 @@ public class PlayerWeapon : MonoBehaviour
         GameObject newballoon = Instantiate(projectile,gunBarrel.position,Quaternion.identity);
         newballoon.transform.forward = directionOfBullet.normalized;
         newballoon.GetComponent<Rigidbody>().AddForce((directionOfBullet.normalized + upwardForce ) * bulletForce,ForceMode.Impulse);
-        newballoon.AddComponent<WaterBalloon>();
     }
 
 }
