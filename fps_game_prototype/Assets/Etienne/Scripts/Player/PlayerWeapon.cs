@@ -5,6 +5,7 @@ using UnityEngine.VFX;
 
 public class PlayerWeapon : MonoBehaviour
 {
+    public int Damage;
     public int MaxAmmo;
     public int AmmoCount;
     public int WeaponType;
@@ -164,6 +165,7 @@ public class PlayerWeapon : MonoBehaviour
         GameObject bulletFromBarrel = Instantiate(projectile,gunBarrel.position,Quaternion.identity);
         bulletFromBarrel.transform.forward = directionOfBullet.normalized;
         bulletFromBarrel.GetComponent<Rigidbody>().AddForce(directionOfBullet.normalized * bulletForce,ForceMode.Impulse);
+        bulletFromBarrel.GetComponent<NerfBullet>().Damage = Damage;
         Destroy(bulletFromBarrel,2.5f);
     }
     public void BalloonSpawner()

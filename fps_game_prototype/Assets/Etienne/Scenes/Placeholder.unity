@@ -881,6 +881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f94f17ed0bcf222498104674ec515d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 0
   MaxAmmo: 0
   AmmoCount: 0
   WeaponType: 4
@@ -4176,7 +4177,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2647319183681714330, guid: 01babb1043487934e9208011f63899f1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2647319183681714340, guid: 01babb1043487934e9208011f63899f1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647319183681714341, guid: 01babb1043487934e9208011f63899f1, type: 3}
+      propertyPath: _enemyPrefab
+      value: 
+      objectReference: {fileID: 4507196766858541988, guid: a12303fd8e95aca41bba5739f412c5d5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01babb1043487934e9208011f63899f1, type: 3}

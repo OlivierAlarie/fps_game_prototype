@@ -42,6 +42,16 @@ public class Enemy : MonoBehaviour
         StateManager.Update();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        PlayerWeapon playerWeapon = other.GetComponent<PlayerWeapon>();
+        if(playerWeapon != null && playerWeapon.WeaponType == 1)
+        {
+            Health -= playerWeapon.Damage;
+            AudioManager.PlayClip("Hurt");
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         NerfBullet nerfbullet = collision.gameObject.GetComponent<NerfBullet>();

@@ -510,6 +510,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 7767427085630949523}
     m_Modifications:
     - target: {fileID: 807902063827364055, guid: 420c0cb8d7b5ba54880ebbe5d7295259, type: 3}
+      propertyPath: Damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 807902063827364055, guid: 420c0cb8d7b5ba54880ebbe5d7295259, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 7767427085630949520}
@@ -755,6 +759,10 @@ PrefabInstance:
       value: PlayerSword
       objectReference: {fileID: 0}
     - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: Damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
       propertyPath: AmmoCount
       value: -1
       objectReference: {fileID: 0}
@@ -831,6 +839,10 @@ PrefabInstance:
     - target: {fileID: 2258617566117033482, guid: 9549ba06e4723d04d9497a8ffe9e5f80, type: 3}
       propertyPath: m_Name
       value: PlayerBlaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758565068052300266, guid: 9549ba06e4723d04d9497a8ffe9e5f80, type: 3}
+      propertyPath: Damage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5758565068052300266, guid: 9549ba06e4723d04d9497a8ffe9e5f80, type: 3}
       propertyPath: WeaponType
