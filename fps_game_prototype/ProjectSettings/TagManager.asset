@@ -10,6 +10,8 @@ TagManager:
   - Enemy
   - Water Splash
   - EnemyWeapon
+  - JuiceBox
+  - MilkCarton
   layers:
   - Default
   - TransparentFX

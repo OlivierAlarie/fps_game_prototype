@@ -21,7 +21,7 @@ public class Script_de_lamie : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _thePlayer = GameObject.Find("Player");
+        _thePlayer = GameObject.FindGameObjectWithTag("Player");
         _laBulleDeDialogue = GameObject.Find("TextBubble");
         _laBulleDeDialogue.SetActive(false);
        

@@ -57,6 +57,8 @@ public class Player : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+
+        WeaponManager.SwitchWeapon(1);
     }
 
     private void Update()
@@ -87,7 +89,6 @@ public class Player : MonoBehaviour
         if (other.CompareTag("EnemyWeapon"))
         {
             Health -= other.GetComponent<EnemyWeapon>().Damage;
-            //Play Hurt Feedback
         }
     }
 
@@ -100,7 +101,6 @@ public class Player : MonoBehaviour
             {
                 Health -= nerfbullet.Damage;
                 nerfbullet.CanDamage = false;
-                //Play Hurt Feedback
             }
         }
     }

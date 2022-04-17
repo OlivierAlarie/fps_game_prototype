@@ -40,10 +40,6 @@ public class PlayerWeaponManager
         if(_weapons[weapon.WeaponType] == null)
         {
             _weapons[weapon.WeaponType] = weapon;
-            if (weapon.isActiveAndEnabled)
-            {
-                SwitchWeapon(weapon.WeaponType);
-            }
         }
         else if (!_weapons[weapon.WeaponType].isActiveAndEnabled)
         {

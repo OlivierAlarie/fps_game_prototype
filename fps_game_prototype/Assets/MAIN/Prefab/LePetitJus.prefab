@@ -4823,7 +4823,7 @@ GameObject:
   - component: {fileID: 7084708509854545860}
   m_Layer: 0
   m_Name: LePetitJus
-  m_TagString: Untagged
+  m_TagString: JuiceBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
