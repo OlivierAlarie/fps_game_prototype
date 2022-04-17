@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 2647319183483119643}
   - component: {fileID: 2647319183483119653}
   - component: {fileID: 2647319183483119642}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: EnemySpawnDetector
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}

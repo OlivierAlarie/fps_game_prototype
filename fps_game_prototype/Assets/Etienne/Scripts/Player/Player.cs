@@ -80,6 +80,7 @@ public class Player : MonoBehaviour
         if (other.CompareTag("WeaponPickup"))
         {
             WeaponManager.AddWeapon(other.GetComponent<PlayerWeapon>());
+            Destroy(other.gameObject);
         }
         if (other.CompareTag("EnemyWeapon"))
         {
