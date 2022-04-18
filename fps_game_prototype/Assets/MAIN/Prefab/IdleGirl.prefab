@@ -448,6 +448,7 @@ GameObject:
   - component: {fileID: 694189386873868988}
   - component: {fileID: 694189386873868989}
   - component: {fileID: 5311922017706632087}
+  - component: {fileID: 5371625574319178904}
   m_Layer: 0
   m_Name: IdleGirl
   m_TagString: Untagged
@@ -533,6 +534,20 @@ MonoBehaviour:
   _lesPtitsJusCestPourLesLunchs: {fileID: 7084708509854545861, guid: 2b5041834237b2d4eaae73ad2c64b5d8, type: 3}
   _lesPtitsLaitCestCorrect: {fileID: 7485443335002433305, guid: f4d88c1c13598934a9ead67b2b3af6fd, type: 3}
   _onVeutQuelleDropDequoi: 0
+--- !u!136 &5371625574319178904
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388198248889429994}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.33766812
+  m_Height: 2.1482568
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9662488, z: -0.16233186}
 --- !u!1 &479423411493948593
 GameObject:
   m_ObjectHideFlags: 0
