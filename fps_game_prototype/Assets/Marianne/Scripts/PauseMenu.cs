@@ -12,6 +12,11 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject _controls;
     [SerializeField] private GameObject _credits;
     [SerializeField] private GameObject _gameOver;
+    [SerializeField] private GameObject _victoryScreen;
+
+    //Reference to another script that checks when we kill all the enemies
+    // Will have a bool that will turn true when player has kill all enemies and is touching the collider
+
     private bool _isPaused;
     private PauseControls _pauseAction;
     [SerializeField] private Player _player;
@@ -70,6 +75,15 @@ public class PauseMenu : MonoBehaviour
     public void PauseGame()
     {
         _pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        _isPaused = true;
+        _player.CommandManager.SetActive(false);
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+    }
+    public void VictoryScreen()
+    {
+        _victoryScreen.SetActive(true);
         Time.timeScale = 0f;
         _isPaused = true;
         _player.CommandManager.SetActive(false);
