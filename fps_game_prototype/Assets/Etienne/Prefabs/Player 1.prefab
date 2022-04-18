@@ -510,17 +510,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 7767427085630949523}
     m_Modifications:
     - target: {fileID: 807902063827364055, guid: 420c0cb8d7b5ba54880ebbe5d7295259, type: 3}
-      propertyPath: Damage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 807902063827364055, guid: 420c0cb8d7b5ba54880ebbe5d7295259, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 7767427085630949520}
-    - target: {fileID: 807902063827364055, guid: 420c0cb8d7b5ba54880ebbe5d7295259, type: 3}
-      propertyPath: bulletForce
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 807902063827364055, guid: 420c0cb8d7b5ba54880ebbe5d7295259, type: 3}
       propertyPath: weaponCamera
       value: 
@@ -572,10 +564,6 @@ PrefabInstance:
     - target: {fileID: 6594552413442626801, guid: 420c0cb8d7b5ba54880ebbe5d7295259, type: 3}
       propertyPath: m_Name
       value: PlayerSniper
-      objectReference: {fileID: 0}
-    - target: {fileID: 6594552413442626801, guid: 420c0cb8d7b5ba54880ebbe5d7295259, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 420c0cb8d7b5ba54880ebbe5d7295259, type: 3}
@@ -707,115 +695,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2914761534743486911, guid: d58f3e0ab662c9a44a3ed3fa11024c58, type: 3}
   m_PrefabInstance: {fileID: 2914761534216020471}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &3030756570502566415
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 7767427085630949523}
-    m_Modifications:
-    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.6370001
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.398417
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.70710784
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.70710576
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844001152951414842, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: m_Name
-      value: PlayerSword
-      objectReference: {fileID: 0}
-    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: Damage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: AmmoCount
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 7767427085630949520}
-    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 303915603}
-    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: isARayCaster
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: weaponCamera
-      value: 
-      objectReference: {fileID: 22408763}
-    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: weaponSounds.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: weaponSounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 1e5368d5e4916f949932cfb7fcad780c, type: 3}
-    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: weaponSounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 08c09a8e36b6f184fb0ab4f85519aa2e, type: 3}
-    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-      propertyPath: weaponSounds.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: d84c1c1225962e047a80b7dd19e71a3c, type: 3}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
---- !u!1 &3717822975062893109 stripped
+--- !u!1 &548438089 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1844001152951414842, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
-  m_PrefabInstance: {fileID: 3030756570502566415}
+  m_CorrespondingSourceObject: {fileID: 2914761534743486910, guid: d58f3e0ab662c9a44a3ed3fa11024c58, type: 3}
+  m_PrefabInstance: {fileID: 2914761534216020471}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &303915603
+--- !u!82 &4220870440958652858
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3717822975062893109}
+  m_GameObject: {fileID: 548438089}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -905,6 +796,103 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &3030756570502566415
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7767427085630949523}
+    m_Modifications:
+    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6370001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.398417
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710784
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70710576
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844001152951414842, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: m_Name
+      value: PlayerSword
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: Damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: AmmoCount
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 7767427085630949520}
+    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: isARayCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: weaponCamera
+      value: 
+      objectReference: {fileID: 22408763}
+    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: weaponSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: weaponSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e5368d5e4916f949932cfb7fcad780c, type: 3}
+    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: weaponSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 08c09a8e36b6f184fb0ab4f85519aa2e, type: 3}
+    - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
+      propertyPath: weaponSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: d84c1c1225962e047a80b7dd19e71a3c, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
 --- !u!4 &4094771383615666319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1359213988489210496, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
@@ -964,14 +952,6 @@ PrefabInstance:
     - target: {fileID: 2258617566117033482, guid: 9549ba06e4723d04d9497a8ffe9e5f80, type: 3}
       propertyPath: m_Name
       value: PlayerBlaster
-      objectReference: {fileID: 0}
-    - target: {fileID: 5758565068052300266, guid: 9549ba06e4723d04d9497a8ffe9e5f80, type: 3}
-      propertyPath: Damage
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5758565068052300266, guid: 9549ba06e4723d04d9497a8ffe9e5f80, type: 3}
-      propertyPath: WeaponType
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5758565068052300266, guid: 9549ba06e4723d04d9497a8ffe9e5f80, type: 3}
       propertyPath: mainCamera

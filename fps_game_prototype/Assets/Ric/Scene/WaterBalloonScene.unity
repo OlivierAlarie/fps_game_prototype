@@ -34359,14 +34359,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 944682437, guid: 697c5ee3c99daf04cb1c09da4a39785d, type: 3}
-      propertyPath: scopeUI
-      value: 
-      objectReference: {fileID: 522554029}
-    - target: {fileID: 944682437, guid: 697c5ee3c99daf04cb1c09da4a39785d, type: 3}
-      propertyPath: crossHairUI
-      value: 
-      objectReference: {fileID: 414169228}
     - target: {fileID: 7767427084997444266, guid: 697c5ee3c99daf04cb1c09da4a39785d, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -35296,16 +35288,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &414169228 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3804199683096677602, guid: 1ac24e9698754ea4c983472351b2467c, type: 3}
-  m_PrefabInstance: {fileID: 1988185536}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &522554029 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3804199682091564049, guid: 1ac24e9698754ea4c983472351b2467c, type: 3}
-  m_PrefabInstance: {fileID: 1988185536}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &549493302
 GameObject:
   m_ObjectHideFlags: 0

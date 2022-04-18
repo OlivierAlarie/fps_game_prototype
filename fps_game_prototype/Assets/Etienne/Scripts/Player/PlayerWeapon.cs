@@ -30,7 +30,9 @@ public class PlayerWeapon : MonoBehaviour
     public bool isABalloon = false;
     public AudioClip[] weaponSounds;
     public AudioClip emptyMagazineAudio;
+    public AudioClip ammoPickUp;
     public AudioSource audioSource;
+    public AudioSource pickUpAudioSource;
 
     [SerializeField] protected Animator _animator;
 
@@ -104,6 +106,11 @@ public class PlayerWeapon : MonoBehaviour
 
         AmmoCount += Ammo;
         AmmoCount = Mathf.Min(AmmoCount, MaxAmmo);
+        if (pickUpAudioSource != null )
+        {
+            pickUpAudioSource.clip = ammoPickUp;
+            pickUpAudioSource.Play();
+        }        
     }
     public void Reload()
     {
