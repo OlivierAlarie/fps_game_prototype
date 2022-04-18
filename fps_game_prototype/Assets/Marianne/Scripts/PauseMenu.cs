@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour
 {
 
     [SerializeField] private GameObject _pauseMenu = null;
+    [SerializeField] private GameObject _controls;
+    [SerializeField] private GameObject _credits;
     [SerializeField] private GameObject _gameOver;
     private bool _isPaused;
     private PauseControls _pauseAction;
@@ -18,6 +20,7 @@ public class PauseMenu : MonoBehaviour
        // Start is called before the first frame update
     void Awake()
     {
+        _player = FindObjectOfType<Player>();
         _pauseAction = new PauseControls();
 
         _pauseMenu.SetActive(false);
@@ -61,7 +64,7 @@ public class PauseMenu : MonoBehaviour
     {
         _gameOver.SetActive(true);
         Time.timeScale = 0f;
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
     }
     public void PauseGame()
@@ -69,20 +72,25 @@ public class PauseMenu : MonoBehaviour
         _pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         _isPaused = true;
-
-        Cursor.lockState = CursorLockMode.None;
+        _player.CommandManager.SetActive(false);
+        Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
     }
     public void Resume()
     {
         _pauseMenu.SetActive(false);
+        _credits.SetActive(false);
+        _controls.SetActive(false);
+        _player.CommandManager.SetActive(true);
         Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
         _isPaused = false;
     }
 
     public void Restart()
     {
         Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadScene(1);
 
     }
@@ -90,6 +98,7 @@ public class PauseMenu : MonoBehaviour
     public void MainMenu()
     {
         Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Confined;
         SceneManager.LoadScene(0);
     }
 
