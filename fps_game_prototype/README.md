@@ -24,7 +24,13 @@ Right Click (with Sniper) - Aim Down Sights
 Xbox Controller:
 Left Stick - Move around
 Right Stick - Look Around
-(WIP)
+A Button - Jump
+Left Trigger (with Sniper) - Aim Down Sights
+Right Strigger - Attack/Shoot/Throw
+DPAD Left - Switch to Sword
+DPAD Up - Switch to Blaster
+DPAD Right - Switch to Sniper
+DPAD Down - Switch to Water Balloon
 
 Instructions: 
 Shoot down all your foes and find your stolen bicycle. You also have a helper that will aid you with melon juices and cartons of milk.
@@ -34,5 +40,5 @@ mixamo.com for animations
 Playground set by ArtStudios3d (artstudios3d.wixsite.com/artstudios3d)
 School bus by Zeeshanhameed on www.cgtrader.com
 Font Kids Written from 1001fonts.com by Galdino Otten (galdinootten.com)
-Font Kids Written from 1001fonts.com by Galdino Otten (galdinootten.com)
 Sounds and musics from Zapsplat.com
+Pew-pew sounds by Salim
