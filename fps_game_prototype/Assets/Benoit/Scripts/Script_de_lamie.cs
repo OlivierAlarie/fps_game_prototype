@@ -42,6 +42,8 @@ public class Script_de_lamie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (Vector3.Distance(this.transform.position, _thePlayer.transform.position) <= 5f) 
         {
             if (_jeSuisEnTrainDyParler == false) 

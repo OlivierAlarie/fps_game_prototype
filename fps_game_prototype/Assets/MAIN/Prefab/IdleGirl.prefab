@@ -531,7 +531,7 @@ MonoBehaviour:
   _leSpawnDuPtitlait: {fileID: 5571109736599666423}
   _lesPtitsJusCestPourLesLunchs: {fileID: 7084708509854545861, guid: 2b5041834237b2d4eaae73ad2c64b5d8, type: 3}
   _lesPtitsLaitCestCorrect: {fileID: 7485443335002433305, guid: f4d88c1c13598934a9ead67b2b3af6fd, type: 3}
-  _onVeutQuelleDropDuLait: 1
+  _onVeutQuelleDropDequoi: 0
 --- !u!1 &479423411493948593
 GameObject:
   m_ObjectHideFlags: 0

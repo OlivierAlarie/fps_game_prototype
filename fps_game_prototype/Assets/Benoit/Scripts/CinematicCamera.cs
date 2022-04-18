@@ -34,17 +34,22 @@ public class CinematicCamera : MonoBehaviour
     
     private void Update()
     {
-        Move();
-        Rotate();
-
-        if (_thePositionsIndex == _thePositions.Length-1)
+        /*
+        if (_thePositionsIndex == _thePositions.Length - 1)
         {
             if (Vector3.Distance(_laCamera.transform.position, _theObjective.position) <= 0.1)
             {
-                //SceneManager.LoadScene(scenename);
+                SceneManager.LoadScene(2);
             }
 
         }
+        */
+        if (_thePositionsIndex == 19)
+        {
+            SceneManager.LoadScene(2);
+        }
+        Move();
+        Rotate();
     }
 
     
