@@ -63,6 +63,8 @@ GameObject:
   - component: {fileID: 1963748166804103597}
   - component: {fileID: 8519038235876067388}
   - component: {fileID: 874506914782982737}
+  - component: {fileID: 5530072737393851448}
+  - component: {fileID: 7937403199412246662}
   m_Layer: 0
   m_Name: SM_Rings_Crossbar_01
   m_TagString: Untagged
@@ -148,8 +150,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0946459, y: 2.5271792, z: 2.0697188}
-  m_Center: {x: -0.000000007450581, y: 1.2635889, z: -0.544909}
+  m_Size: {x: 0.0946459, y: 2.5271792, z: 0.120777085}
+  m_Center: {x: -0.0000000085086285, y: 1.2635884, z: 0.42956144}
 --- !u!65 &1963748166804103597
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -192,6 +194,32 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 1.264, z: 0.47}
   m_TimeToStationary: 0.5
+--- !u!65 &5530072737393851448
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4455263080433830715}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0946459, y: 2.5271792, z: 0.1400267}
+  m_Center: {x: 0.0000009444578, y: 1.263589, z: -1.5271307}
+--- !u!65 &7937403199412246662
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4455263080433830715}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0946459, y: 0.11633079, z: 2.0654275}
+  m_Center: {x: 0.0000009444578, y: 2.4690127, z: -0.5402215}
 --- !u!1 &7370309897600532320
 GameObject:
   m_ObjectHideFlags: 0
