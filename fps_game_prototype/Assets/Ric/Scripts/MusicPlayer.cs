@@ -6,6 +6,7 @@ public class MusicPlayer : MonoBehaviour
 {
     [SerializeField] private AudioSource regular;
     [SerializeField] private AudioSource bossfight;
+    [SerializeField] private AudioSource credits;
     private bool bfIsPlaying = false;
 
     private void OnTriggerEnter(Collider other) 
@@ -16,5 +17,11 @@ public class MusicPlayer : MonoBehaviour
             regular.Pause();
             bfIsPlaying = true;
         }
+    }
+
+    public void PlayCredits()
+    {
+        credits.Play();
+        bossfight.Pause();
     }
 }

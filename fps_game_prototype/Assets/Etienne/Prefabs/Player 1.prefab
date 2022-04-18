@@ -510,6 +510,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 7767427085630949523}
     m_Modifications:
     - target: {fileID: 807902063827364055, guid: 420c0cb8d7b5ba54880ebbe5d7295259, type: 3}
+      propertyPath: Damage
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 807902063827364055, guid: 420c0cb8d7b5ba54880ebbe5d7295259, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 7767427085630949520}

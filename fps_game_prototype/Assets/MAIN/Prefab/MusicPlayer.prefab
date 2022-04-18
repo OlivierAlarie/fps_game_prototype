@@ -49,7 +49,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410039495}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -241,7 +241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2454939274526522418
 Transform:
   m_ObjectHideFlags: 0
@@ -381,7 +381,7 @@ Transform:
   m_GameObject: {fileID: 7166751953460149687}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.388215, y: 1.6860532, z: -3.846887}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4.2696867, y: 4.1590295, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1067851191657007882}
@@ -406,6 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   regular: {fileID: 6250328533317034756}
   bossfight: {fileID: 5486058397900198741}
+  credits: {fileID: 6500103662160673754}
 --- !u!54 &137354619
 Rigidbody:
   m_ObjectHideFlags: 0
