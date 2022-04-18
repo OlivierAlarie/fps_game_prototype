@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Oli/FPS_Map.unity
     guid: c0c4c414b2aa9c04c90abbc4ce1bac2e
-  - enabled: 1
+  - enabled: 0
     path: Assets/MAIN/Scene/PauseMenuTest.unity
     guid: 2d43b3e49ad25334a88eb498bf5ef7e8
   m_configObjects:

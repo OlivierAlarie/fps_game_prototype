@@ -99,6 +99,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Confined;
+        _isPaused = false;
         SceneManager.LoadScene(0);
     }
 

@@ -518,6 +518,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7767427085630949520}
     - target: {fileID: 807902063827364055, guid: 420c0cb8d7b5ba54880ebbe5d7295259, type: 3}
+      propertyPath: bulletForce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 807902063827364055, guid: 420c0cb8d7b5ba54880ebbe5d7295259, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 22408763}
@@ -760,7 +764,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
       propertyPath: Damage
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
       propertyPath: AmmoCount

@@ -70,8 +70,8 @@ public class Player : MonoBehaviour
     private void LateUpdate()
     {
 
-        TargetRotationH += CommandManager.Look.x * Time.deltaTime * _cameraSensitivity.x;
-        TargetRotationV += CommandManager.Look.y * Time.deltaTime * _cameraSensitivity.y;
+        TargetRotationH += CommandManager.Look.x * Time.deltaTime;
+        TargetRotationV += CommandManager.Look.y * Time.deltaTime;
 
         TargetRotationV = Mathf.Clamp(TargetRotationV, _cameraYBounds.x, _cameraYBounds.y);
 
