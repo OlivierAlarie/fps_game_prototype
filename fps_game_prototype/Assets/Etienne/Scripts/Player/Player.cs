@@ -11,6 +11,10 @@ public class Player : MonoBehaviour
     public PlayerCommandManager CommandManager;
     public PlayerStateManager StateManager;
     public PlayerWeaponManager WeaponManager;
+    public AudioClip slurpSoundJuice;
+    public AudioClip slurpSoundMilk;
+
+    public AudioSource audioSource;
     
 
     // HEALTH & STATUS VARIABLES
@@ -93,11 +97,15 @@ public class Player : MonoBehaviour
         if (other.CompareTag("JuiceBox"))
         {
             Health = Mathf.Min(Health + 20, 100);
+            audioSource.clip = slurpSoundJuice;
+            audioSource.Play();
             Destroy(other.gameObject);
         }
         if (other.CompareTag("MilkCarton"))
         {
             Health = Mathf.Min(Health + 10, 100);
+            audioSource.clip = slurpSoundMilk;
+            audioSource.Play();
             Destroy(other.gameObject);
         }
     }
