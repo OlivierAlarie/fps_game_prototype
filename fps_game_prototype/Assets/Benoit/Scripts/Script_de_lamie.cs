@@ -28,10 +28,10 @@ public class Script_de_lamie : MonoBehaviour
 
     /*1. mesurer la distance entre l'amie et le player
      *2. Si distance <= X, le reste du code embarque sinon rien se passe
-     *3. Un String public qu'on doit accéder pour le speech de la fille.
+     *3. Un String public qu'on doit accï¿½der pour le speech de la fille.
      *4. Un IENUMERATOR Coroutine qui fait en sorte que le text soit lisible assez longtemps.
-     *5. après la coroutine, le text disparait.
-     *6. Après que le text disparaisse, le jus spawn au spawn de jus.
+     *5. aprï¿½s la coroutine, le text disparait.
+     *6. Aprï¿½s que le text disparaisse, le jus spawn au spawn de jus.
      *
      *1 coroutine
      *if else premier et deuxieme text
@@ -52,6 +52,12 @@ public class Script_de_lamie : MonoBehaviour
                  {
                    _leTexteDuDialogue.text = _laPremiereChoseQuElleVaDire;
                  StartCoroutine("LeTexteApparaitPourLaPremiereFois");
+
+                    if (_onVeutQuelleDropDequoi == true)
+                    {
+                        Instantiate(_lesPtitsJusCestPourLesLunchs, _leSpawnDuPtitJus.transform.position, _leSpawnDuPtitJus.transform.rotation);
+                        Instantiate(_lesPtitsLaitCestCorrect, _leSpawnDuPtitlait.transform.position, _leSpawnDuPtitlait.transform.rotation);
+                    }
                  } else
                  {
                    _leTexteDuDialogue.text = _laDeuxiemeChoseQuElleVaDire;
@@ -66,15 +72,10 @@ public class Script_de_lamie : MonoBehaviour
     IEnumerator LeTexteApparaitPourLaPremiereFois()
     {
 
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(5f);
         if (_jyAiParler == false)
         {
-            
-            if (_onVeutQuelleDropDequoi == true)
-            {
-                Instantiate(_lesPtitsJusCestPourLesLunchs, _leSpawnDuPtitJus.transform.position, _leSpawnDuPtitJus.transform.rotation);
-                Instantiate(_lesPtitsLaitCestCorrect, _leSpawnDuPtitlait.transform.position, _leSpawnDuPtitlait.transform.rotation);
-            }
+                        
         }
         _jyAiParler = true;
         _laBulleDeDialogue.SetActive(false);
