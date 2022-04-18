@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionFX: {fileID: 4884465465092964932, guid: c131b3f33894f394b8cd4b94234cc845, type: 3}
+  SplashFX: {fileID: 1666700911943514289, guid: d12a019bed96b3643af3f7645c74cfb4, type: 3}
   maxCollisionNumber: 2
   explosionRange: 2.2
   explosionDamage: 20

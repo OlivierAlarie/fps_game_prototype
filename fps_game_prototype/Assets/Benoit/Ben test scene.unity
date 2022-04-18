@@ -1512,6 +1512,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WB PickUp
       objectReference: {fileID: 0}
+    - target: {fileID: 5763916869239050805, guid: 0aea1ff152902024d999117f5d430aea, type: 3}
+      propertyPath: AmmoCount
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 5763916869239050806, guid: 0aea1ff152902024d999117f5d430aea, type: 3}
       propertyPath: m_RootOrder
       value: 1
