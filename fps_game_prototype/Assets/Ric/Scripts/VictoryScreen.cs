@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class VictoryScreen : MonoBehaviour
 {
-    public PauseMenu pauseMenu;
+    public PauseMenu pauseMenuScript;
 
     private void Start() 
     {
-        pauseMenu = GetComponent<PauseMenu>();
+        pauseMenuScript = GetComponent<PauseMenu>();
     }
     private void OnTriggerEnter(Collider other) 
     {
+        
         if(other.GetComponent<Collider>().gameObject.tag == "Player")
         {
-            pauseMenu.VictoryScreen();
+            pauseMenuScript.VictoryScreen();
         }
     }
 }

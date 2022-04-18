@@ -103,10 +103,10 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
+        _player.Health = 100;
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
-        SceneManager.LoadScene(1);
-
+        SceneManager.LoadScene(2);
     }
 
     public void MainMenu()
