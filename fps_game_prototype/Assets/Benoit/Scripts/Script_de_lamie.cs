@@ -9,7 +9,7 @@ public class Script_de_lamie : MonoBehaviour
     [SerializeField] private string _laPremiereChoseQuElleVaDire;
     [SerializeField] private TextMeshProUGUI _leTexteDuDialogue;
     [SerializeField] private string _laDeuxiemeChoseQuElleVaDire;
-    private GameObject _laBulleDeDialogue;
+    [SerializeField] private GameObject _laBulleDeDialogue;
     [SerializeField] private Transform _leSpawnDuPtitJus;
     [SerializeField] private Transform _leSpawnDuPtitlait;
     private bool _jyAiParler;
@@ -22,7 +22,6 @@ public class Script_de_lamie : MonoBehaviour
     void Start()
     {
         _thePlayer = GameObject.FindGameObjectWithTag("Player");
-        _laBulleDeDialogue = GameObject.Find("TextBubble");
         _laBulleDeDialogue.SetActive(false);
        
     }

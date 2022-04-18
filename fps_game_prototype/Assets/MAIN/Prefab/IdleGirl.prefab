@@ -527,6 +527,7 @@ MonoBehaviour:
   _laPremiereChoseQuElleVaDire: salut prend ce petit  jus et ce lait
   _leTexteDuDialogue: {fileID: 2041572175}
   _laDeuxiemeChoseQuElleVaDire: tu as deja ton petit jus
+  _laBulleDeDialogue: {fileID: 1719682514}
   _leSpawnDuPtitJus: {fileID: 3295090074812806607}
   _leSpawnDuPtitlait: {fileID: 5571109736599666423}
   _lesPtitsJusCestPourLesLunchs: {fileID: 7084708509854545861, guid: 2b5041834237b2d4eaae73ad2c64b5d8, type: 3}
