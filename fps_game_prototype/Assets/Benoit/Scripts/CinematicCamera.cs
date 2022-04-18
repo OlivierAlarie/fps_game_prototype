@@ -10,7 +10,7 @@ public class CinematicCamera : MonoBehaviour
     private GameObject _laCamera;
     [Header("Movement Variables")]
     [SerializeField]
-    private float _speed = 5.0f;
+    private float[] _speed;
     private int _thePositionsIndex = 0;
     private Transform _theObjective = null;
     [Header("*********ALLEZ LIRE LE SCRIP*******")]
@@ -50,7 +50,7 @@ public class CinematicCamera : MonoBehaviour
     
     private void Move()
     {
-        _laCamera.transform.position = Vector3.MoveTowards(_laCamera.transform.position, _theObjective.position, _speed * Time.deltaTime);
+        _laCamera.transform.position = Vector3.MoveTowards(_laCamera.transform.position, _theObjective.position, _speed[_thePositionsIndex] * Time.deltaTime);
 
         if (Vector3.Distance(_laCamera.transform.position, _theObjective.position) <= 0.1)
         {
