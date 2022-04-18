@@ -55,6 +55,18 @@ public class PlayerCommandManager
 
         _inputs.Enable();
     }
+
+    public void SetActive(bool value)
+    {
+        if (value)
+        {
+            _inputs.Enable();
+        }
+        else
+        {
+            _inputs.Disable();
+        }
+    }
     private void OnMovement(InputAction.CallbackContext context)
     {
         Vector2 movementInput = context.ReadValue<Vector2>();
