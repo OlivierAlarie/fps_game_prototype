@@ -593,7 +593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2914761534743486908, guid: d58f3e0ab662c9a44a3ed3fa11024c58, type: 3}
       propertyPath: MaxAmmo
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2914761534743486908, guid: d58f3e0ab662c9a44a3ed3fa11024c58, type: 3}
       propertyPath: gunBarrel
