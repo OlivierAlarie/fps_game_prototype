@@ -90,6 +90,16 @@ public class Player : MonoBehaviour
         {
             Health -= other.GetComponent<EnemyWeapon>().Damage;
         }
+        if (other.CompareTag("JuiceBox"))
+        {
+            Health = Mathf.Min(Health + 20, 100);
+            Destroy(other.gameObject);
+        }
+        if (other.CompareTag("MilkCarton"))
+        {
+            Health = Mathf.Min(Health + 10, 100);
+            Destroy(other.gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
