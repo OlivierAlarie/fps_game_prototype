@@ -601,7 +601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2914761534743486908, guid: d58f3e0ab662c9a44a3ed3fa11024c58, type: 3}
       propertyPath: MaxAmmo
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2914761534743486908, guid: d58f3e0ab662c9a44a3ed3fa11024c58, type: 3}
       propertyPath: gunBarrel
@@ -760,7 +760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
       propertyPath: Damage
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7452313569427269569, guid: 245f0b9335e456d43a87d703095a850a, type: 3}
       propertyPath: AmmoCount
