@@ -68,6 +68,7 @@ public class PauseMenu : MonoBehaviour
     private void GameOver()
     {
         _gameOver.SetActive(true);
+        _pauseAction.Disable();
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
@@ -84,6 +85,7 @@ public class PauseMenu : MonoBehaviour
     public void VictoryScreen()
     {
         _victoryScreen.SetActive(true);
+        _pauseAction.Disable();
         Time.timeScale = 0f;
         _isPaused = true;
         _player.CommandManager.SetActive(false);
@@ -105,6 +107,7 @@ public class PauseMenu : MonoBehaviour
     {
         _player.Health = 100;
         Time.timeScale = 1f;
+        _pauseAction.Enable();
         Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadScene(2);
     }
@@ -112,6 +115,7 @@ public class PauseMenu : MonoBehaviour
     public void MainMenu()
     {
         Time.timeScale = 1f;
+        _pauseAction.Enable();
         Cursor.lockState = CursorLockMode.Confined;
         _isPaused = false;
         SceneManager.LoadScene(0);
