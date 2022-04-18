@@ -33,7 +33,7 @@ DPAD Right - Switch to Sniper
 DPAD Down - Switch to Water Balloon
 
 Instructions: 
-Shoot down all your foes and find your stolen bicycle. You also have a helper that will aid you with melon juices and cartons of milk.
+Shoot down all your foes and find your friend's stolen bicycle. You also have a helper that will aid you with melon juices and cartons of milk.
 
 Credits:
 mixamo.com for animations
