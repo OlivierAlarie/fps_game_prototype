@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a3dbe08216bdb8419834e02651fb7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 20
+  Health: 15
   Agent: {fileID: 0}
   Target: {fileID: 0}
   IdealDistance: 40
