@@ -5,11 +5,6 @@ using UnityEngine;
 public class VictoryScreen : MonoBehaviour
 {
     public PauseMenu pauseMenuScript;
-
-    private void Start() 
-    {
-        pauseMenuScript = GetComponent<PauseMenu>();
-    }
     private void OnTriggerEnter(Collider other) 
     {
         
